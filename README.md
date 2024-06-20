@@ -1,5 +1,5 @@
 # 💫 About Me:
- I'm currently Learning JS<br> I'm 18M<br> I've eager to understand quantitative trading [In future]<br> From 14th june i will code daily for next 1000 days straight no matter what.
+ I'm currently Learning JS<br> I'm 18M<br> I've eager to understand quantitative trading [In future]<br>
 
 
 ## 🌐 Socials:
