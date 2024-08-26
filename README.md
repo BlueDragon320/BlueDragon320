@@ -1,5 +1,5 @@
 # 💫 About Me:
- I'm currently Learning JS<br> I'm 18M<br> //I've eager to understand quantitative trading [In future]<br>
+ I'm currently Learning JS<br> I'm 18M<br> 
 
 
 ## 🌐 Socials:
