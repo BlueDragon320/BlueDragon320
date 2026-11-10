@@ -1,0 +1,790 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="480">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="stack_border_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.85"/>
+      <stop offset="35%" stop-color="#a78bfa" stop-opacity="0.7"/>
+      <stop offset="70%" stop-color="#f472b6" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#facc15" stop-opacity="0.85"/>
+    </linearGradient>
+
+    <linearGradient id="stack_title_grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="45%" stop-color="#a78bfa"/>
+      <stop offset="85%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+
+    <radialGradient id="stack_nebula_cyan" cx="15%" cy="20%" r="60%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="stack_nebula_purple" cx="50%" cy="38%" r="65%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.22"/>
+      <stop offset="60%" stop-color="#8b5cf6" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#0d0e16" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="stack_nebula_pink" cx="85%" cy="80%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Center Core Radial Aura -->
+    <radialGradient id="stack_core_glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.45"/>
+      <stop offset="35%" stop-color="#a78bfa" stop-opacity="0.32"/>
+      <stop offset="70%" stop-color="#818cf8" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#0d0e16" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="stack_action_orb" cx="40%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="30%" stop-color="#22d3ee"/>
+      <stop offset="75%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </radialGradient>
+
+    <!-- Brand Gradients -->
+    <linearGradient id="stack_grad_vite" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#41d1ff"/>
+      <stop offset="100%" stop-color="#bd34fe"/>
+    </linearGradient>
+
+    <linearGradient id="stack_grad_kotlin1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7f52ff"/>
+      <stop offset="100%" stop-color="#c711e1"/>
+    </linearGradient>
+
+    <linearGradient id="stack_grad_kotlin2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e24462"/>
+      <stop offset="100%" stop-color="#e58e00"/>
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="stack_glow_cyan" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="stack_glow_purple" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="stack_glow_pink" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="stack_glow_gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="2.5" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <!-- Background Dot Pattern -->
+    <pattern id="stack_bg_grid" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#334155" opacity="0.25"/>
+    </pattern>
+
+    <clipPath id="stack_card_clip">
+      <rect width="900" height="480" rx="20"/>
+    </clipPath>
+
+    <style><![CDATA[
+      /* CSS Animations & Reset */
+      text {
+        user-select: none;
+      }
+
+      /* Core breathing aura */
+      .stack-core-pulse {
+        animation: stack_coreAura 3.6s ease-in-out infinite alternate;
+      }
+      @keyframes stack_coreAura {
+        0% { transform: scale(0.96); opacity: 0.65; }
+        100% { transform: scale(1.06); opacity: 0.95; }
+      }
+
+      /* Orbit Track Dash Animation */
+      .stack-orbit-line-1 {
+        animation: stack_orbitDash1 28s linear infinite;
+      }
+      .stack-orbit-line-2 {
+        animation: stack_orbitDash2 40s linear infinite;
+      }
+      .stack-orbit-line-3 {
+        animation: stack_orbitDash3 52s linear infinite;
+      }
+      @keyframes stack_orbitDash1 {
+        to { stroke-dashoffset: -400px; }
+      }
+      @keyframes stack_orbitDash2 {
+        to { stroke-dashoffset: 480px; }
+      }
+      @keyframes stack_orbitDash3 {
+        to { stroke-dashoffset: -600px; }
+      }
+
+      /* Tech Node Floating Animations (applied only to inner relative groups) */
+      .stack-float-1 {
+        animation: stack_nodeFloat1 4.5s ease-in-out infinite alternate;
+      }
+      .stack-float-2 {
+        animation: stack_nodeFloat2 5.2s ease-in-out infinite alternate;
+      }
+      .stack-float-3 {
+        animation: stack_nodeFloat3 4.8s ease-in-out infinite alternate;
+      }
+      @keyframes stack_nodeFloat1 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-3.5px); }
+      }
+      @keyframes stack_nodeFloat2 {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(3px); }
+      }
+      @keyframes stack_nodeFloat3 {
+        0% { transform: translateY(-2px); }
+        100% { transform: translateY(2px); }
+      }
+
+      /* Beacon ping animation */
+      .stack-beacon-ping {
+        animation: stack_beaconRipple 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        transform-origin: 864px 28px;
+      }
+      @keyframes stack_beaconRipple {
+        0% { r: 3.5px; opacity: 0.9; }
+        100% { r: 9px; opacity: 0; }
+      }
+
+      /* Standard chipGlow spec animation */
+      @keyframes chipGlow {
+        0%, 25% { stroke-opacity: 1; stroke-width: 1.8px; filter: drop-shadow(0 0 7px currentColor); }
+        32%, 100% { stroke-opacity: 0.15; stroke-width: 1px; filter: none; }
+      }
+
+      /* Sequential Glowing Category Box Borders (6s cycle) */
+      .stack-cat-box-1 {
+        animation: stack_glowBox1 6s infinite, chipGlow 6s infinite;
+      }
+      .stack-cat-box-2 {
+        animation: stack_glowBox2 6s infinite;
+      }
+      .stack-cat-box-3 {
+        animation: stack_glowBox3 6s infinite;
+      }
+      .stack-cat-box-4 {
+        animation: stack_glowBox4 6s infinite;
+      }
+
+      @keyframes stack_glowBox1 {
+        0%, 25% {
+          stroke: #22d3ee;
+          stroke-width: 1.8px;
+          filter: drop-shadow(0 0 7px rgba(34, 211, 238, 0.65));
+        }
+        32%, 100% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+      }
+
+      @keyframes stack_glowBox2 {
+        0%, 22% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+        25%, 50% {
+          stroke: #a78bfa;
+          stroke-width: 1.8px;
+          filter: drop-shadow(0 0 7px rgba(167, 139, 250, 0.65));
+        }
+        57%, 100% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+      }
+
+      @keyframes stack_glowBox3 {
+        0%, 47% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+        50%, 75% {
+          stroke: #f472b6;
+          stroke-width: 1.8px;
+          filter: drop-shadow(0 0 7px rgba(244, 114, 182, 0.65));
+        }
+        82%, 100% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+      }
+
+      @keyframes stack_glowBox4 {
+        0%, 72% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+        75%, 98% {
+          stroke: #facc15;
+          stroke-width: 1.8px;
+          filter: drop-shadow(0 0 7px rgba(250, 204, 21, 0.65));
+        }
+        100% {
+          stroke: rgba(255, 255, 255, 0.08);
+          stroke-width: 1px;
+          filter: none;
+        }
+      }
+
+      /* Running Light Border Shimmer (chipGlow 6s infinite) */
+      .stack-shimmer-1 {
+        animation: stack_shimmerRun1 6s infinite linear;
+      }
+      .stack-shimmer-2 {
+        animation: stack_shimmerRun2 6s infinite linear;
+      }
+      .stack-shimmer-3 {
+        animation: stack_shimmerRun3 6s infinite linear;
+      }
+      .stack-shimmer-4 {
+        animation: stack_shimmerRun4 6s infinite linear;
+      }
+
+      @keyframes stack_shimmerRun1 {
+        0% { stroke-dashoffset: 0; opacity: 1; }
+        24% { stroke-dashoffset: -725px; opacity: 1; }
+        25%, 100% { opacity: 0; }
+      }
+      @keyframes stack_shimmerRun2 {
+        0%, 24% { opacity: 0; stroke-dashoffset: 0; }
+        25% { stroke-dashoffset: 0; opacity: 1; }
+        49% { stroke-dashoffset: -725px; opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes stack_shimmerRun3 {
+        0%, 49% { opacity: 0; stroke-dashoffset: 0; }
+        50% { stroke-dashoffset: 0; opacity: 1; }
+        74% { stroke-dashoffset: -725px; opacity: 1; }
+        75%, 100% { opacity: 0; }
+      }
+      @keyframes stack_shimmerRun4 {
+        0%, 74% { opacity: 0; stroke-dashoffset: 0; }
+        75% { stroke-dashoffset: 0; opacity: 1; }
+        99% { stroke-dashoffset: -725px; opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      .stack-chip-item {
+        transition: transform 0.2s ease;
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Card Background & Midnight Glass Base -->
+  <g clip-path="url(#stack_card_clip)">
+    <!-- Base dark background -->
+    <rect width="900" height="480" fill="#0d0e16"/>
+
+    <!-- Subtle dot grid texture -->
+    <rect width="900" height="480" fill="url(#stack_bg_grid)"/>
+
+    <!-- Soft Aurora Ambient Nebulas -->
+    <ellipse cx="160" cy="90" rx="220" ry="90" fill="url(#stack_nebula_cyan)"/>
+    <ellipse cx="450" cy="165" rx="280" ry="120" fill="url(#stack_nebula_purple)"/>
+    <ellipse cx="760" cy="380" rx="220" ry="100" fill="url(#stack_nebula_pink)"/>
+
+    <!-- ==================== HEADER ==================== -->
+    <g transform="translate(26, 20)">
+      <!-- Terminal status dots -->
+      <circle cx="8" cy="8" r="4.5" fill="#ef4444" opacity="0.9"/>
+      <circle cx="22" cy="8" r="4.5" fill="#facc15" opacity="0.9"/>
+      <circle cx="36" cy="8" r="4.5" fill="#10b981" opacity="0.9"/>
+
+      <!-- Header Title & Subtitle -->
+      <text x="54" y="12" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="800" letter-spacing="0.1em" fill="url(#stack_title_grad)">TECH CONSTELLATION &amp; TOOLING</text>
+      <text x="54" y="27" font-family="ui-monospace, SFMono-Regular, monospace" font-size="9.5" fill="#94a3b8" letter-spacing="0.04em">// Orbiting technologies &amp; core engineering stack</text>
+    </g>
+
+    <!-- Top-Right Telemetry Badge -->
+    <g transform="translate(685, 20)">
+      <rect x="0" y="0" width="188" height="26" rx="13" fill="#14172a" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <!-- Pulsing Beacon -->
+      <circle cx="16" cy="13" r="3.5" fill="#10b981"/>
+      <circle cx="16" cy="13" r="3.5" fill="none" stroke="#10b981" stroke-width="1.5" class="stack-beacon-ping"/>
+      <text x="27" y="17" font-family="ui-monospace, SFMono-Regular, monospace" font-size="8.5" font-weight="700" fill="#cbd5e1" letter-spacing="0.06em">ORBITAL CORE: ONLINE</text>
+      <text x="175" y="17" font-family="ui-monospace, SFMono-Regular, monospace" font-size="8" fill="#64748b" text-anchor="end">60FPS</text>
+    </g>
+
+    <!-- Hairline Separator below header -->
+    <line x1="26" y1="56" x2="874" y2="56" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+    <!-- ==================== UPPER HALF: TECH ORBIT SYSTEM ==================== -->
+    <g id="stack_tech_orbit_system">
+      <!-- 1. ORBIT TRACKS (Tilted Ellipses) -->
+      <!-- Orbit 1 (Inner) -->
+      <path id="stack_orbit_path_1" d="M 586.66 145.79 A 138 58 -8 0 1 313.34 184.21 A 138 58 -8 0 1 586.66 145.79 Z" fill="none" stroke="rgba(167, 139, 250, 0.45)" stroke-width="1.2" stroke-dasharray="4 5" class="stack-orbit-line-1"/>
+
+      <!-- Orbit 2 (Middle) -->
+      <path id="stack_orbit_path_2" d="M 688.69 190.09 A 240 68 6 0 1 211.31 139.91 A 240 68 6 0 1 688.69 190.09 Z" fill="none" stroke="rgba(34, 211, 238, 0.4)" stroke-width="1.2" stroke-dasharray="5 6" class="stack-orbit-line-2"/>
+
+      <!-- Orbit 3 (Outer) -->
+      <path id="stack_orbit_path_3" d="M 809.51 146.16 A 360 92 -3 0 1 90.49 183.84 A 360 92 -3 0 1 809.51 146.16 Z" fill="none" stroke="rgba(244, 114, 182, 0.35)" stroke-width="1.2" stroke-dasharray="6 7" class="stack-orbit-line-3"/>
+
+      <!-- Photon Comets traveling along the orbits -->
+      <circle r="3" fill="#a78bfa" filter="url(#stack_glow_purple)">
+        <animateMotion dur="10s" repeatCount="indefinite" path="M 586.66 145.79 A 138 58 -8 0 1 313.34 184.21 A 138 58 -8 0 1 586.66 145.79 Z"/>
+      </circle>
+      <circle r="3" fill="#22d3ee" filter="url(#stack_glow_cyan)">
+        <animateMotion dur="16s" repeatCount="indefinite" path="M 688.69 190.09 A 240 68 6 0 1 211.31 139.91 A 240 68 6 0 1 688.69 190.09 Z"/>
+      </circle>
+      <circle r="3" fill="#f472b6" filter="url(#stack_glow_pink)">
+        <animateMotion dur="24s" repeatCount="indefinite" path="M 809.51 146.16 A 360 92 -3 0 1 90.49 183.84 A 360 92 -3 0 1 809.51 146.16 Z"/>
+      </circle>
+
+      <!-- 2. GLOWING CENTER CORE: Stylized Shin-chan Action Kamen Shield / Atom Core -->
+      <g id="stack_action_kamen_core" transform="translate(450, 165)">
+        <!-- Pulsing Radial Aura -->
+        <g class="stack-core-pulse">
+          <circle cx="0" cy="0" r="58" fill="url(#stack_core_glow)"/>
+        </g>
+
+        <!-- Concentric HUD rings -->
+        <circle cx="0" cy="0" r="38" fill="none" stroke="rgba(167, 139, 250, 0.3)" stroke-width="1" stroke-dasharray="3 4"/>
+        <circle cx="0" cy="0" r="28" fill="none" stroke="rgba(34, 211, 238, 0.35)" stroke-width="1" stroke-dasharray="2 3"/>
+
+        <!-- Intersecting Atom Electron Orbits (Rotated around 0, 0) -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+          <ellipse cx="0" cy="0" rx="34" ry="12" fill="none" stroke="#22d3ee" stroke-width="1.2" opacity="0.65" transform="rotate(-30)"/>
+          <ellipse cx="0" cy="0" rx="34" ry="12" fill="none" stroke="#a78bfa" stroke-width="1.2" opacity="0.65" transform="rotate(30)"/>
+          <circle cx="28" cy="-15" r="1.8" fill="#ffffff" filter="url(#stack_glow_cyan)"/>
+        </g>
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="14s" repeatCount="indefinite"/>
+          <ellipse cx="0" cy="0" rx="34" ry="12" fill="none" stroke="#f472b6" stroke-width="1" opacity="0.5" transform="rotate(90)"/>
+          <circle cx="0" cy="-33" r="1.8" fill="#facc15" filter="url(#stack_glow_gold)"/>
+        </g>
+
+        <!-- Cyber Reticle Brackets -->
+        <path d="M -28 -17 H -34 V -11" stroke="#22d3ee" stroke-width="1.2" fill="none" opacity="0.7"/>
+        <path d="M 28 -17 H 34 V -11" stroke="#22d3ee" stroke-width="1.2" fill="none" opacity="0.7"/>
+        <path d="M -28 17 H -34 V 11" stroke="#22d3ee" stroke-width="1.2" fill="none" opacity="0.7"/>
+        <path d="M 28 17 H 34 V 11" stroke="#22d3ee" stroke-width="1.2" fill="none" opacity="0.7"/>
+
+        <!-- Action Kamen Shield Body -->
+        <g class="stack-float-1">
+          <!-- Shield Outer Body & Hairline Border -->
+          <path d="M 0 -29 L 23 -18 L 18 9 L 0 27 L -18 9 L -23 -18 Z" fill="#101328" stroke="url(#stack_border_grad)" stroke-width="1.6" filter="drop-shadow(0 0 8px rgba(167, 139, 250, 0.55))"/>
+
+          <!-- Action Kamen Helmet / Mask Visor (Cyan trims) -->
+          <path d="M -14 -9 Q -6 -4 -3 -2 L -6 1 Q -12 -1 -15 -6 Z" fill="#22d3ee" opacity="0.95"/>
+          <path d="M 14 -9 Q 6 -4 3 -2 L 6 1 Q 12 -1 15 -6 Z" fill="#22d3ee" opacity="0.95"/>
+
+          <!-- Action Kamen Forehead Golden Star Crest -->
+          <polygon points="0,-25 2.2,-19.5 8,-19 3.8,-15.2 5.2,-9.8 0,-12.8 -5.2,-9.8 -3.8,-15.2 -8,-19 -2.2,-19.5" fill="#facc15" filter="drop-shadow(0 0 3px #facc15)"/>
+
+          <!-- Glowing Center Nucleus Orb -->
+          <circle cx="0" cy="8" r="8.5" fill="url(#stack_action_orb)" stroke="#ffffff" stroke-width="0.8"/>
+
+          <!-- Action Kamen "A" Super Monogram -->
+          <path d="M 0 1.5 L 4.5 13 H 2.5 L 1.2 9.5 H -1.2 L -2.5 13 H -4.5 Z M 0 4.5 L -0.7 8 H 0.7 Z" fill="#ffffff"/>
+
+          <!-- Label below shield -->
+          <text x="0" y="34" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, monospace" font-size="7.5" font-weight="700" letter-spacing="0.14em" fill="#a78bfa">ACTION CORE // SYS</text>
+        </g>
+      </g>
+
+      <!-- 3. ORBIT 1 (INNER): React, TypeScript, Python -->
+      <!-- React (with Vite moon) -->
+      <g transform="translate(580, 133)">
+        <g class="stack-float-1">
+          <!-- React Badge -->
+          <circle cx="0" cy="0" r="17" fill="#0f172a" stroke="#61dafb" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(97, 218, 251, 0.45))"/>
+          <!-- React Logo -->
+          <circle cx="0" cy="0" r="2.2" fill="#61dafb"/>
+          <ellipse rx="12" ry="4.8" fill="none" stroke="#61dafb" stroke-width="1.2"/>
+          <ellipse rx="12" ry="4.8" fill="none" stroke="#61dafb" stroke-width="1.2" transform="rotate(60)"/>
+          <ellipse rx="12" ry="4.8" fill="none" stroke="#61dafb" stroke-width="1.2" transform="rotate(120)"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">React</text>
+
+          <!-- Vite Moon Orbit & Satellite -->
+          <circle cx="0" cy="0" r="27" fill="none" stroke="#bd34fe" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.45"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="5.5s" repeatCount="indefinite"/>
+            <g transform="translate(27, 0)">
+              <circle cx="0" cy="0" r="7.5" fill="#1b122c" stroke="#bd34fe" stroke-width="1.1" filter="drop-shadow(0 0 4px #bd34fe)"/>
+              <!-- Vite V shape and bolt -->
+              <path d="M -4.2 -4.5 L 4.2 -4.5 L 0 4.5 Z" fill="url(#stack_grad_vite)" opacity="0.85"/>
+              <path d="M 0.5 -4.5 L -2 -0.5 H 0 L -0.8 4.2 L 2.2 0 H 0.2 Z" fill="#ffd43b"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- TypeScript -->
+      <g transform="translate(446, 224)">
+        <g class="stack-float-2">
+          <circle cx="0" cy="0" r="17" fill="#0f172a" stroke="#3178c6" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(49, 120, 198, 0.45))"/>
+          <rect x="-8.5" y="-8.5" width="17" height="17" rx="3" fill="#3178c6"/>
+          <text x="0" y="4" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="800" font-size="10" fill="#ffffff" letter-spacing="-0.3px">TS</text>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">TypeScript</text>
+        </g>
+      </g>
+
+      <!-- Python (with NumPy / Flask mini orb) -->
+      <g transform="translate(334, 150)">
+        <g class="stack-float-3">
+          <!-- Python Badge -->
+          <circle cx="0" cy="0" r="17" fill="#0f172a" stroke="#3776ab" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(55, 118, 171, 0.45))"/>
+          <!-- Python Snakes -->
+          <path d="M -0.5 -7.5 C -4 -7.5 -5 -6 -5 -4.5 H -2 C -2 -5 -1.5 -5.8 -0.5 -5.8 C 0.8 -5.8 1.8 -5.2 1.8 -4.2 V -2.5 H -5.2 C -6.8 -2.5 -7.5 -1.5 -7.5 0.5 C -7.5 2.2 -6.5 3.2 -4.8 3.2 H -3.5 V 1.2 C -3.5 -0.2 -2.5 -1.2 -1.2 -1.2 H 1.8 C 3.2 -1.2 4 -2 4 -3.5 V -4 C 4 -6 3.2 -7.5 -0.5 -7.5 Z" fill="#3776ab"/>
+          <circle cx="-2.2" cy="-5.8" r="0.7" fill="#ffffff"/>
+          <path d="M 0.5 7.5 C 4 7.5 5 6 5 4.5 H 2 C 2 5 1.5 5.8 0.5 5.8 C -0.8 5.8 -1.8 5.2 -1.8 4.2 V 2.5 H 5.2 C 6.8 2.5 7.5 1.5 7.5 -0.5 C 7.5 -2.2 6.5 -3.2 4.8 -3.2 H 3.5 V -1.2 C 3.5 0.2 2.5 1.2 1.2 1.2 H -1.8 C -3.2 1.2 -4 2 -4 3.5 V 4 C -4 6 -3.2 7.5 0.5 7.5 Z" fill="#ffd43b"/>
+          <circle cx="2.2" cy="5.8" r="0.7" fill="#1e293b"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Python</text>
+
+          <!-- NumPy Mini Orb Orbit -->
+          <circle cx="0" cy="0" r="26" fill="none" stroke="#4dabcf" stroke-width="0.8" stroke-dasharray="2 3" opacity="0.45"/>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="6.5s" repeatCount="indefinite"/>
+            <g transform="translate(26, 0)">
+              <circle cx="0" cy="0" r="7.5" fill="#0d1b2a" stroke="#4dabcf" stroke-width="1.1" filter="drop-shadow(0 0 4px #4dabcf)"/>
+              <!-- NumPy matrix cells -->
+              <rect x="-3.5" y="-3.5" width="2.8" height="2.8" fill="#4dabcf" rx="0.5"/>
+              <rect x="0.7" y="-3.5" width="2.8" height="2.8" fill="#ffc107" rx="0.5"/>
+              <rect x="-3.5" y="0.7" width="2.8" height="2.8" fill="#ffc107" rx="0.5"/>
+              <rect x="0.7" y="0.7" width="2.8" height="2.8" fill="#4dabcf" rx="0.5"/>
+            </g>
+          </g>
+        </g>
+      </g>
+
+      <!-- 4. ORBIT 2 (MIDDLE): Arch Linux, Docker, Tailwind CSS, Flask -->
+      <!-- Tailwind CSS -->
+      <g transform="translate(650, 147)">
+        <g class="stack-float-2">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#38bdf8" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(56, 189, 248, 0.45))"/>
+          <path d="M -1.5 -1.5 C -3.5 -4.5 -1 -7.5 3.5 -6.5 C 7.5 -5.5 8 -2 5.5 0 C 3.5 1.5 2 2 -1.5 -1.5 Z M -7 3.5 C -9 0.5 -6.5 -2.5 -2 -1.5 C 2 -0.5 2.5 3 0 5 C -2 6.5 -3.5 7 -7 3.5 Z" fill="#38bdf8"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Tailwind</text>
+        </g>
+      </g>
+
+      <!-- Docker -->
+      <g transform="translate(614, 231)">
+        <g class="stack-float-3">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#2496ed" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(36, 150, 237, 0.45))"/>
+          <!-- Docker Containers & Whale -->
+          <g fill="#2496ed">
+            <rect x="-5" y="-6" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="-2.3" y="-6" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="0.4" y="-6" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="-7.7" y="-3.8" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="-5" y="-3.8" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="-2.3" y="-3.8" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="0.4" y="-3.8" width="2.2" height="1.8" rx="0.3"/>
+            <rect x="3.1" y="-3.8" width="2.2" height="1.8" rx="0.3"/>
+            <path d="M -8 -1 H 5.5 C 7 -1 8.5 0 8.5 1.8 C 8.5 4 5.5 5.8 1.8 5.8 C -3.5 5.8 -6.5 4.5 -8 2.5 C -9 3 -9.8 2.5 -9.5 1.2 C -9.2 0.3 -8.5 -0.5 -8 -1 Z"/>
+            <circle cx="5.5" cy="1.3" r="0.6" fill="#0f172a"/>
+          </g>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Docker</text>
+        </g>
+      </g>
+
+      <!-- Arch Linux -->
+      <g transform="translate(231, 171)">
+        <g class="stack-float-1">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#1793d1" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(23, 147, 209, 0.45))"/>
+          <!-- Arch Triangle Swoop -->
+          <path d="M 0 -8 L 7.5 7 L 4.5 7 L 2.6 3.2 C 1.5 4.3 0 4.7 0 4.7 C 0 4.7 -1.5 4.3 -2.6 3.2 L -4.5 7 L -7.5 7 Z M 0 -2.5 L 1.5 1 C 0.7 1.5 0 1.6 0 1.6 C 0 1.6 -0.7 1.5 -1.5 1 Z" fill="#1793d1"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Arch Linux</text>
+        </g>
+      </g>
+
+      <!-- Flask -->
+      <g transform="translate(247, 110)">
+        <g class="stack-float-2">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#ffffff" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(255, 255, 255, 0.4))"/>
+          <!-- Flask Beaker -->
+          <path d="M -1.8 -7.5 H 1.8 V -4 L 6 4.5 C 6.8 6.2 5.5 7.2 4 7.2 H -4 C -5.5 7.2 -6.8 6.2 -6 4.5 L -1.8 -4 Z" fill="none" stroke="#ffffff" stroke-width="1.2" stroke-linejoin="round"/>
+          <path d="M -3.8 3.5 Q 0 4.8 3.8 3.5 L 4.6 5.5 C 5 6.2 4.5 6.6 3.8 6.6 H -3.8 C -4.5 6.6 -5 6.2 -4.6 5.5 Z" fill="#22d3ee" opacity="0.9"/>
+          <circle cx="-1" cy="0.8" r="0.7" fill="#ffffff" opacity="0.8"/>
+          <circle cx="1.2" cy="2" r="0.5" fill="#ffffff" opacity="0.8"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Flask</text>
+        </g>
+      </g>
+
+      <!-- 5. ORBIT 3 (OUTER): Kotlin, C++, Socket.IO, Whisper AI -->
+      <!-- C++ -->
+      <g transform="translate(598, 74)">
+        <g class="stack-float-1">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#00599e" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(0, 89, 158, 0.45))"/>
+          <!-- Hexagon -->
+          <polygon points="0,-7.5 6.5,-3.8 6.5,3.8 0,7.5 -6.5,3.8 -6.5,-3.8" fill="#00599e" stroke="#38bdf8" stroke-width="0.8"/>
+          <text x="0" y="3" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="900" font-size="7.5" fill="#ffffff" letter-spacing="-0.3px">C++</text>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">C++</text>
+        </g>
+      </g>
+
+      <!-- Whisper AI -->
+      <g transform="translate(807, 159)">
+        <g class="stack-float-2">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#10b981" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(16, 185, 129, 0.45))"/>
+          <!-- Audio waveform / neural spark -->
+          <g stroke="#10b981" stroke-width="1.4" stroke-linecap="round">
+            <line x1="-6.5" y1="-2" x2="-6.5" y2="2"/>
+            <line x1="-3.2" y1="-5.5" x2="-3.2" y2="5.5"/>
+            <line x1="0" y1="-7.5" x2="0" y2="7.5"/>
+            <line x1="3.2" y1="-5.5" x2="3.2" y2="5.5"/>
+            <line x1="6.5" y1="-2" x2="6.5" y2="2"/>
+          </g>
+          <circle cx="0" cy="0" r="1.5" fill="#ffffff"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Whisper AI</text>
+        </g>
+      </g>
+
+      <!-- Kotlin -->
+      <g transform="translate(92, 192)">
+        <g class="stack-float-3">
+          <circle cx="0" cy="0" r="16" fill="#0f172a" stroke="#7f52ff" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(127, 82, 255, 0.45))"/>
+          <!-- Kotlin Origami Triangles -->
+          <g>
+            <polygon points="-7,-7 7,-7 0,0 -7,0" fill="url(#stack_grad_kotlin1)"/>
+            <polygon points="-7,0 0,0 7,7 -7,7" fill="url(#stack_grad_kotlin2)"/>
+          </g>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Kotlin</text>
+        </g>
+      </g>
+
+      <!-- Socket.IO -->
+      <g transform="translate(414, 75)">
+        <g class="stack-float-1">
+          <circle cx="0" cy="0" r="16" fill="#0a0a0f" stroke="#f1f5f9" stroke-width="1.2" filter="drop-shadow(0 0 6px rgba(255, 255, 255, 0.45))"/>
+          <circle cx="0" cy="0" r="7.5" fill="#010101" stroke="#38bdf8" stroke-width="1"/>
+          <path d="M -3 4 L 2.5 -4 H 0 L 1.2 -1.2 H -1.2 Z" fill="#ffffff"/>
+          <circle cx="-1" cy="-2" r="1" fill="#22d3ee"/>
+          <circle cx="1.8" cy="1.5" r="1" fill="#22d3ee"/>
+          <text x="0" y="27" text-anchor="middle" font-family="system-ui, sans-serif" font-size="8.5" font-weight="600" fill="#e2e8f0">Socket.IO</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Hairline Separator above Category Grid -->
+    <line x1="26" y1="274" x2="874" y2="274" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+    <!-- ==================== LOWER HALF: GROUPED CHIP GRID ==================== -->
+    <!-- 4 Category Columns with Sequential Glowing Borders & Running Shimmers -->
+
+    <!-- COLUMN 1: FRONTEND & MOBILE (Cyan #22d3ee) -->
+    <g transform="translate(25.5, 288)">
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="#101322" fill-opacity="0.75"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" class="stack-cat-box-1" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" stroke="#22d3ee" stroke-width="2" stroke-dasharray="80 645" class="stack-shimmer-1" filter="drop-shadow(0 0 4px #22d3ee)"/>
+
+      <!-- Category Header -->
+      <g transform="translate(12, 16)">
+        <circle cx="5" cy="5" r="4" fill="#22d3ee" filter="drop-shadow(0 0 4px #22d3ee)"/>
+        <text x="16" y="8" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.06em" fill="#22d3ee">FRONTEND &amp; MOBILE</text>
+      </g>
+      <line x1="12" y1="30" x2="189" y2="30" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+      <!-- Chips (5 stacked) -->
+      <!-- Chip 1: React -->
+      <g transform="translate(10, 36)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#61dafb"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">React</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">UI CORE</text>
+      </g>
+      <!-- Chip 2: TypeScript -->
+      <g transform="translate(10, 63)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#3178c6"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">TypeScript</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">TYPING</text>
+      </g>
+      <!-- Chip 3: Tailwind CSS -->
+      <g transform="translate(10, 90)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#38bdf8"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Tailwind CSS</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">UTILITY</text>
+      </g>
+      <!-- Chip 4: Kotlin (Android) -->
+      <g transform="translate(10, 117)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#7f52ff"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Kotlin (Android)</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">MOBILE</text>
+      </g>
+      <!-- Chip 5: Vite -->
+      <g transform="translate(10, 144)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#bd34fe"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Vite</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">SPEED</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 2: BACKEND & SYNC APIS (Purple #a78bfa) -->
+    <g transform="translate(241.5, 288)">
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="#101322" fill-opacity="0.75"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" class="stack-cat-box-2" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" stroke="#a78bfa" stroke-width="2" stroke-dasharray="80 645" class="stack-shimmer-2" filter="drop-shadow(0 0 4px #a78bfa)"/>
+
+      <g transform="translate(12, 16)">
+        <circle cx="5" cy="5" r="4" fill="#a78bfa" filter="drop-shadow(0 0 4px #a78bfa)"/>
+        <text x="16" y="8" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.06em" fill="#a78bfa">BACKEND &amp; SYNC APIS</text>
+      </g>
+      <line x1="12" y1="30" x2="189" y2="30" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+      <!-- Chip 1: Python / Flask -->
+      <g transform="translate(10, 36)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#3776ab"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Python / Flask</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">SERVICES</text>
+      </g>
+      <!-- Chip 2: Node.js -->
+      <g transform="translate(10, 63)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#22c55e"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Node.js</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">EVENT LOOP</text>
+      </g>
+      <!-- Chip 3: Socket.IO -->
+      <g transform="translate(10, 90)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#f1f5f9"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Socket.IO</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">WEBSOCKET</text>
+      </g>
+      <!-- Chip 4: REST APIs -->
+      <g transform="translate(10, 117)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#a78bfa"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">REST APIs</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">JSON/HTTP</text>
+      </g>
+      <!-- Chip 5: Whisper AI -->
+      <g transform="translate(10, 144)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#10b981"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Whisper AI</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">SPEECH/ML</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 3: SYSTEMS & OS (Pink #f472b6) -->
+    <g transform="translate(457.5, 288)">
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="#101322" fill-opacity="0.75"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" class="stack-cat-box-3" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" stroke="#f472b6" stroke-width="2" stroke-dasharray="80 645" class="stack-shimmer-3" filter="drop-shadow(0 0 4px #f472b6)"/>
+
+      <g transform="translate(12, 16)">
+        <circle cx="5" cy="5" r="4" fill="#f472b6" filter="drop-shadow(0 0 4px #f472b6)"/>
+        <text x="16" y="8" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.06em" fill="#f472b6">SYSTEMS &amp; OS</text>
+      </g>
+      <line x1="12" y1="30" x2="189" y2="30" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+      <!-- Chip 1: Arch Linux -->
+      <g transform="translate(10, 36)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#1793d1"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Arch Linux</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">BTW/MAIN</text>
+      </g>
+      <!-- Chip 2: Hyprland / Wayland -->
+      <g transform="translate(10, 63)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#00c8ff"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Hyprland / Wayland</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">COMPOSITOR</text>
+      </g>
+      <!-- Chip 3: Bash / Zsh -->
+      <g transform="translate(10, 90)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#4ade80"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Bash / Zsh</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">SHELL/CLI</text>
+      </g>
+      <!-- Chip 4: C / C++ -->
+      <g transform="translate(10, 117)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#60a5fa"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">C / C++</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">SYSTEMS</text>
+      </g>
+      <!-- Chip 5: Docker -->
+      <g transform="translate(10, 144)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#2496ed"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Docker</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">CONTAINER</text>
+      </g>
+    </g>
+
+    <!-- COLUMN 4: TOOLS & DEVOPS (Gold #facc15) -->
+    <g transform="translate(673.5, 288)">
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="#101322" fill-opacity="0.75"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" class="stack-cat-box-4" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+      <rect x="0" y="0" width="201" height="174" rx="12" fill="none" stroke="#facc15" stroke-width="2" stroke-dasharray="80 645" class="stack-shimmer-4" filter="drop-shadow(0 0 4px #facc15)"/>
+
+      <g transform="translate(12, 16)">
+        <circle cx="5" cy="5" r="4" fill="#facc15" filter="drop-shadow(0 0 4px #facc15)"/>
+        <text x="16" y="8" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.06em" fill="#facc15">TOOLS &amp; DEVOPS</text>
+      </g>
+      <line x1="12" y1="30" x2="189" y2="30" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+      <!-- Chip 1: Git / GitHub -->
+      <g transform="translate(10, 36)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#f05032"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Git / GitHub</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">VCS/FLOW</text>
+      </g>
+      <!-- Chip 2: VS Code / Vim -->
+      <g transform="translate(10, 63)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#007acc"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">VS Code / Vim</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">EDITOR</text>
+      </g>
+      <!-- Chip 3: Waybar -->
+      <g transform="translate(10, 90)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#22d3ee"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Waybar</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">STATUSBAR</text>
+      </g>
+      <!-- Chip 4: Linux Kernel Rice -->
+      <g transform="translate(10, 117)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <circle cx="12" cy="11.5" r="3" fill="#e879f9"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#f1f5f9">Linux Kernel Rice</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#64748b" text-anchor="end">CUSTOM</text>
+      </g>
+      <!-- Chip 5: Chocobi Power -->
+      <g transform="translate(10, 144)" class="stack-chip-item">
+        <rect x="0" y="0" width="181" height="23" rx="5" fill="#141728" stroke="rgba(255, 255, 255, 0.05)" stroke-width="1"/>
+        <!-- Chocobi Star Icon -->
+        <polygon points="12,8.5 13.2,11.5 16,11.8 13.8,13.8 14.5,16.8 12,15.2 9.5,16.8 10.2,13.8 8,11.8 10.8,11.5" fill="#facc15" filter="drop-shadow(0 0 2px #facc15)"/>
+        <text x="22" y="15" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#facc15">Chocobi Power</text>
+        <text x="172" y="15" font-family="ui-monospace, monospace" font-size="8" fill="#facc15" text-anchor="end" font-weight="700">MAX ★</text>
+      </g>
+    </g>
+
+    <!-- Outer Hairline Gradient Border (Midnight Glass Frame) -->
+    <rect x="0.75" y="0.75" width="898.5" height="478.5" rx="20" fill="none" stroke="url(#stack_border_grad)" stroke-width="1.5"/>
+  </g>
+</svg>

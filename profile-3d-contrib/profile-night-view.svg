@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 850 320" width="100%" height="320">
+  <defs>
+    <linearGradient id="city_sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#090a10"/>
+      <stop offset="100%" stop-color="#121324"/>
+    </linearGradient>
+    <linearGradient id="tower_glow1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0284c7" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="tower_glow2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="tower_glow3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#be123c" stop-opacity="0.4"/>
+    </linearGradient>
+    <linearGradient id="tower_glow4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#d97706" stop-opacity="0.4"/>
+    </linearGradient>
+    <filter id="city_neon" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="850" height="320" rx="16" fill="url(#city_sky)" stroke="rgba(255,255,255,0.08)"/>
+
+  <!-- Starry / Grid Background -->
+  <g opacity="0.25">
+    <circle cx="120" cy="40" r="1" fill="#fff"/>
+    <circle cx="280" cy="70" r="1.5" fill="#22d3ee"/>
+    <circle cx="450" cy="30" r="1" fill="#fff"/>
+    <circle cx="680" cy="55" r="1.5" fill="#f472b6"/>
+    <circle cx="790" cy="45" r="1" fill="#fff"/>
+    <circle cx="340" cy="110" r="1" fill="#fff"/>
+    <circle cx="580" cy="90" r="1" fill="#a78bfa"/>
+  </g>
+
+  <!-- Title & Status Header -->
+  <g transform="translate(30, 36)">
+    <circle cx="6" cy="6" r="4" fill="#22d3ee">
+      <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <text x="20" y="10" fill="#f8fafc" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="700" letter-spacing="1">3D CONTRIBUTION CITY SKYLINE // NIGHT VIEW</text>
+    <text x="20" y="26" fill="#94a3b8" font-family="monospace" font-size="11">Rebuilt daily via GitHub Actions · yoshi389111/github-profile-3d-contrib</text>
+  </g>
+
+  <!-- Isometric Grid / Ground Plane -->
+  <g transform="translate(425, 230)">
+    <!-- Base grid lines -->
+    <path d="M-360,-60 L0,-160 L360,-60 L0,40 Z" fill="#0d0e1a" stroke="rgba(34, 211, 238, 0.15)" stroke-width="1"/>
+    <path d="M-270,-35 L0,-110 L270,-35 L0,15 Z" fill="none" stroke="rgba(167, 139, 250, 0.12)" stroke-width="1"/>
+    <path d="M-180,-10 L0,-60 L180,-10 L0,-10 Z" fill="none" stroke="rgba(244, 114, 182, 0.1)" stroke-width="1"/>
+
+    <!-- 3D Isometric Buildings / Commit Towers -->
+    <!-- Tower 1 -->
+    <g transform="translate(-240, -40)">
+      <polygon points="0,0 20,-10 40,0 20,10" fill="#38bdf8" opacity="0.8"/>
+      <polygon points="0,0 20,10 20,60 0,50" fill="#0284c7" opacity="0.7"/>
+      <polygon points="40,0 20,10 20,60 40,50" fill="#0369a1" opacity="0.9"/>
+    </g>
+
+    <!-- Tower 2 -->
+    <g transform="translate(-180, -25)">
+      <polygon points="0,-40 24,-52 48,-40 24,-28" fill="#a78bfa" opacity="0.9"/>
+      <polygon points="0,-40 24,-28 24,50 0,38" fill="#7c3aed" opacity="0.8"/>
+      <polygon points="48,-40 24,-28 24,50 48,38" fill="#6d28d9" opacity="0.95"/>
+      <circle cx="24" cy="-40" r="2" fill="#fff" filter="url(#city_neon)"/>
+    </g>
+
+    <!-- Tower 3 (Tall Center Peak) -->
+    <g transform="translate(-120, -50)">
+      <polygon points="0,-90 28,-104 56,-90 28,-76" fill="#f43f5e" opacity="0.95"/>
+      <polygon points="0,-90 28,-76 28,40 0,26" fill="#e11d48" opacity="0.85"/>
+      <polygon points="56,-90 28,-76 28,40 56,26" fill="#be123c" opacity="0.95"/>
+      <line x1="28" y1="-104" x2="28" y2="-120" stroke="#f43f5e" stroke-width="2"/>
+      <circle cx="28" cy="-120" r="3" fill="#facc15" filter="url(#city_neon)">
+        <animate attributeName="opacity" values="0.4;1;0.4" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Tower 4 (Mid Peak) -->
+    <g transform="translate(-50, -70)">
+      <polygon points="0,-60 26,-73 52,-60 26,-47" fill="#22d3ee" opacity="0.9"/>
+      <polygon points="0,-60 26,-47 26,45 0,32" fill="#0ea5e9" opacity="0.8"/>
+      <polygon points="52,-60 26,-47 26,45 52,32" fill="#0284c7" opacity="0.95"/>
+    </g>
+
+    <!-- Tower 5 (Center Landmark) -->
+    <g transform="translate(15, -90)">
+      <polygon points="0,-110 32,-126 64,-110 32,-94" fill="#facc15" opacity="0.95"/>
+      <polygon points="0,-110 32,-94 32,35 0,19" fill="#eab308" opacity="0.85"/>
+      <polygon points="64,-110 32,-94 32,35 64,19" fill="#ca8a04" opacity="0.95"/>
+      <line x1="32" y1="-126" x2="32" y2="-145" stroke="#facc15" stroke-width="2"/>
+      <circle cx="32" cy="-145" r="3.5" fill="#fff" filter="url(#city_neon)"/>
+    </g>
+
+    <!-- Tower 6 -->
+    <g transform="translate(90, -60)">
+      <polygon points="0,-75 26,-88 52,-75 26,-62" fill="#a78bfa" opacity="0.9"/>
+      <polygon points="0,-75 26,-62 26,40 0,27" fill="#8b5cf6" opacity="0.8"/>
+      <polygon points="52,-75 26,-62 26,40 52,27" fill="#7c3aed" opacity="0.95"/>
+    </g>
+
+    <!-- Tower 7 -->
+    <g transform="translate(160, -40)">
+      <polygon points="0,-50 24,-62 48,-50 24,-38" fill="#38bdf8" opacity="0.85"/>
+      <polygon points="0,-50 24,-38 24,45 0,33" fill="#0284c7" opacity="0.75"/>
+      <polygon points="48,-50 24,-38 24,45 48,33" fill="#0369a1" opacity="0.9"/>
+    </g>
+
+    <!-- Tower 8 -->
+    <g transform="translate(225, -20)">
+      <polygon points="0,-25 20,-35 40,-25 20,-15" fill="#f472b6" opacity="0.85"/>
+      <polygon points="0,-25 20,-15 20,40 0,30" fill="#db2777" opacity="0.75"/>
+      <polygon points="40,-25 20,-15 20,40 40,30" fill="#be185d" opacity="0.9"/>
+    </g>
+  </g>
+
+  <!-- Legend at bottom -->
+  <g transform="translate(30, 290)">
+    <text fill="#64748b" font-family="monospace" font-size="10">ACTIVITY INTENSITY:</text>
+    <rect x="140" y="-8" width="12" height="10" rx="2" fill="#1e293b"/>
+    <text x="156" y="0" fill="#64748b" font-family="monospace" font-size="10">Low</text>
+    <rect x="190" y="-8" width="12" height="10" rx="2" fill="#0284c7"/>
+    <rect x="206" y="-8" width="12" height="10" rx="2" fill="#a78bfa"/>
+    <rect x="222" y="-8" width="12" height="10" rx="2" fill="#f43f5e"/>
+    <rect x="238" y="-8" width="12" height="10" rx="2" fill="#facc15"/>
+    <text x="256" y="0" fill="#64748b" font-family="monospace" font-size="10">Ultra Active (Night Owl)</text>
+  </g>
+</svg>

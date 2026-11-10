@@ -1,0 +1,769 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460" width="100%" height="460">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="about_card_base_grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f111c" />
+      <stop offset="100%" stop-color="#090a12" />
+    </linearGradient>
+
+    <linearGradient id="about_glass_sheen" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.08" />
+      <stop offset="25%" stop-color="#ffffff" stop-opacity="0.02" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </linearGradient>
+
+    <radialGradient id="about_aurora_left" cx="20%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.12" />
+      <stop offset="50%" stop-color="#a78bfa" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#0d0e16" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="about_aurora_right" cx="85%" cy="20%" r="75%">
+      <stop offset="0%" stop-color="#facc15" stop-opacity="0.10" />
+      <stop offset="45%" stop-color="#f472b6" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#0d0e16" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Dot Grid Pattern -->
+    <pattern id="about_dot_grid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="0.75" fill="#ffffff" fill-opacity="0.06" />
+    </pattern>
+
+    <!-- Capability Tile Radial Gradients -->
+    <radialGradient id="about_tile_cyan" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#0e3a53" />
+      <stop offset="100%" stop-color="#081b28" />
+    </radialGradient>
+
+    <radialGradient id="about_tile_violet" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#2d1c52" />
+      <stop offset="100%" stop-color="#140c26" />
+    </radialGradient>
+
+    <radialGradient id="about_tile_pink" cx="50%" cy="30%" r="70%">
+      <stop offset="0%" stop-color="#421834" />
+      <stop offset="100%" stop-color="#1c0916" />
+    </radialGradient>
+
+    <!-- Accent Linear Gradients -->
+    <linearGradient id="about_accent_cyan" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <linearGradient id="about_accent_violet" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+
+    <linearGradient id="about_accent_pink" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#db2777" />
+    </linearGradient>
+
+    <linearGradient id="about_accent_gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+
+    <linearGradient id="about_bar_grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee" />
+      <stop offset="35%" stop-color="#a78bfa" />
+      <stop offset="70%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#facc15" />
+    </linearGradient>
+
+    <linearGradient id="about_ring_cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#06b6d4" />
+    </linearGradient>
+
+    <linearGradient id="about_ring_pink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f472b6" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+
+    <linearGradient id="about_ring_gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+
+    <!-- Clip Paths -->
+    <clipPath id="about_card_left_clip">
+      <rect x="20" y="20" width="415" height="420" rx="16" />
+    </clipPath>
+
+    <clipPath id="about_card_right_clip">
+      <rect x="465" y="20" width="415" height="420" rx="16" />
+    </clipPath>
+
+    <clipPath id="about_slide_clip">
+      <rect x="481" y="76" width="383" height="154" rx="12" />
+    </clipPath>
+
+    <style><![CDATA[
+      .about_text_sans {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      .about_text_mono {
+        font-family: "JetBrains Mono", "SF Mono", "Fira Code", Menlo, Monaco, Consolas, monospace;
+      }
+
+      /* Monospace Cursor Blink */
+      @keyframes about_cursor_blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      .about_cursor {
+        animation: about_cursor_blink 1s step-end infinite;
+      }
+
+      /* Live indicator pulse */
+      @keyframes about_pulse_dot {
+        0%, 100% { opacity: 1; transform: scale(1); }
+        50% { opacity: 0.4; transform: scale(0.85); }
+      }
+      .about_pulse {
+        animation: about_pulse_dot 2s ease-in-out infinite;
+        transform-origin: center;
+      }
+
+      /* Instagram Progress Bars (16s cycle) */
+      @keyframes about_prog_kf1 {
+        0% { width: 0px; }
+        23% { width: 88px; }
+        98% { width: 88px; }
+        100% { width: 0px; }
+      }
+      @keyframes about_prog_kf2 {
+        0%, 24% { width: 0px; }
+        25% { width: 0px; }
+        48% { width: 88px; }
+        98% { width: 88px; }
+        100% { width: 0px; }
+      }
+      @keyframes about_prog_kf3 {
+        0%, 49% { width: 0px; }
+        50% { width: 0px; }
+        73% { width: 88px; }
+        98% { width: 88px; }
+        100% { width: 0px; }
+      }
+      @keyframes about_prog_kf4 {
+        0%, 74% { width: 0px; }
+        75% { width: 0px; }
+        98% { width: 88px; }
+        100% { width: 0px; }
+      }
+      .about_pbar_1 { animation: about_prog_kf1 16s linear infinite; }
+      .about_pbar_2 { animation: about_prog_kf2 16s linear infinite; }
+      .about_pbar_3 { animation: about_prog_kf3 16s linear infinite; }
+      .about_pbar_4 { animation: about_prog_kf4 16s linear infinite; }
+
+      /* Carousel Crossfade (16s cycle, 4s per slide) */
+      @keyframes about_slide_kf1 {
+        0%, 22% { opacity: 1; transform: translateY(0); }
+        24.5% { opacity: 0; transform: translateY(-4px); }
+        25%, 98% { opacity: 0; transform: translateY(4px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes about_slide_kf2 {
+        0%, 23% { opacity: 0; transform: translateY(4px); }
+        25.5%, 47% { opacity: 1; transform: translateY(0); }
+        49.5% { opacity: 0; transform: translateY(-4px); }
+        50%, 100% { opacity: 0; transform: translateY(4px); }
+      }
+      @keyframes about_slide_kf3 {
+        0%, 48% { opacity: 0; transform: translateY(4px); }
+        50.5%, 72% { opacity: 1; transform: translateY(0); }
+        74.5% { opacity: 0; transform: translateY(-4px); }
+        75%, 100% { opacity: 0; transform: translateY(4px); }
+      }
+      @keyframes about_slide_kf4 {
+        0%, 73% { opacity: 0; transform: translateY(4px); }
+        75.5%, 97% { opacity: 1; transform: translateY(0); }
+        99.5% { opacity: 0; transform: translateY(-4px); }
+        100% { opacity: 0; transform: translateY(4px); }
+      }
+      .about_slide_1 { animation: about_slide_kf1 16s ease-in-out infinite; }
+      .about_slide_2 { animation: about_slide_kf2 16s ease-in-out infinite; }
+      .about_slide_3 { animation: about_slide_kf3 16s ease-in-out infinite; }
+      .about_slide_4 { animation: about_slide_kf4 16s ease-in-out infinite; }
+
+      /* Equalizer Bar Animations */
+      @keyframes about_eq_kf1 { 0%, 100% { height: 16px; y: 32px; } 50% { height: 26px; y: 22px; } }
+      @keyframes about_eq_kf2 { 0%, 100% { height: 24px; y: 24px; } 50% { height: 10px; y: 38px; } }
+      @keyframes about_eq_kf3 { 0%, 100% { height: 20px; y: 28px; } 50% { height: 28px; y: 20px; } }
+      @keyframes about_eq_kf4 { 0%, 100% { height: 28px; y: 20px; } 50% { height: 12px; y: 36px; } }
+      @keyframes about_eq_kf5 { 0%, 100% { height: 18px; y: 30px; } 50% { height: 26px; y: 22px; } }
+      @keyframes about_eq_kf6 { 0%, 100% { height: 22px; y: 26px; } 50% { height: 8px; y: 40px; } }
+
+      .about_eq_1 { animation: about_eq_kf1 1.2s ease-in-out infinite; }
+      .about_eq_2 { animation: about_eq_kf2 0.9s ease-in-out infinite; }
+      .about_eq_3 { animation: about_eq_kf3 1.4s ease-in-out infinite; }
+      .about_eq_4 { animation: about_eq_kf4 1.1s ease-in-out infinite; }
+      .about_eq_5 { animation: about_eq_kf5 1.3s ease-in-out infinite; }
+      .about_eq_6 { animation: about_eq_kf6 1.0s ease-in-out infinite; }
+
+      /* Flight Trail Animation */
+      @keyframes about_contrail_kf {
+        from { stroke-dashoffset: 24; }
+        to { stroke-dashoffset: 0; }
+      }
+      .about_contrail {
+        animation: about_contrail_kf 1.5s linear infinite;
+      }
+
+      /* Activity Rings Sweep and Pulse */
+      @keyframes about_ring_kf1 {
+        0% { stroke-dashoffset: 276.46; }
+        35% { stroke-dashoffset: 11.06; }
+        75% { stroke-dashoffset: 4.0; }
+        100% { stroke-dashoffset: 11.06; }
+      }
+      @keyframes about_ring_kf2 {
+        0% { stroke-dashoffset: 207.35; }
+        35% { stroke-dashoffset: 20.73; }
+        75% { stroke-dashoffset: 12.0; }
+        100% { stroke-dashoffset: 20.73; }
+      }
+      @keyframes about_ring_kf3 {
+        0% { stroke-dashoffset: 138.23; }
+        35% { stroke-dashoffset: 0; }
+        75% { stroke-dashoffset: -2.0; }
+        100% { stroke-dashoffset: 0; }
+      }
+      .about_ring_1 { animation: about_ring_kf1 7s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .about_ring_2 { animation: about_ring_kf2 7s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+      .about_ring_3 { animation: about_ring_kf3 7s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+      /* Shin-Chan Chibi Subtle Float */
+      @keyframes about_chibi_kf {
+        0%, 100% { transform: translate(730px, 268px); }
+        50% { transform: translate(730px, 264px); }
+      }
+      .about_chibi {
+        animation: about_chibi_kf 4s ease-in-out infinite;
+      }
+
+      /* Chocobi Star Float and Spin */
+      @keyframes about_star_kf {
+        0%, 100% { transform: translate(10px, -20px) rotate(0deg); }
+        50% { transform: translate(10px, -24px) rotate(8deg); }
+      }
+      .about_star {
+        animation: about_star_kf 3s ease-in-out infinite;
+        transform-origin: center;
+      }
+    ]]></style>
+  </defs>
+
+  <!-- Left Card: What I Build // Tech Philosophy -->
+  <g id="about_left_card">
+    <!-- Card Base and Midnight Glass Styling -->
+    <rect x="20" y="20" width="415" height="420" rx="16" fill="url(#about_card_base_grad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.2" />
+    <rect x="20" y="20" width="415" height="420" rx="16" fill="url(#about_aurora_left)" clip-path="url(#about_card_left_clip)" />
+    <rect x="20" y="20" width="415" height="420" rx="16" fill="url(#about_dot_grid)" clip-path="url(#about_card_left_clip)" />
+    <!-- Top Glass Sheen -->
+    <rect x="20" y="20" width="415" height="60" rx="16" fill="url(#about_glass_sheen)" clip-path="url(#about_card_left_clip)" />
+
+    <!-- Browser Window Header Bar -->
+    <!-- Window Controls (Red, Yellow, Green) -->
+    <circle cx="42" cy="43.5" r="4.5" fill="#ef4444" stroke="rgba(0,0,0,0.2)" stroke-width="0.5" />
+    <circle cx="56" cy="43.5" r="4.5" fill="#eab308" stroke="rgba(0,0,0,0.2)" stroke-width="0.5" />
+    <circle cx="70" cy="43.5" r="4.5" fill="#10b981" stroke="rgba(0,0,0,0.2)" stroke-width="0.5" />
+
+    <!-- URL Bar Container -->
+    <rect x="86" y="32" width="333" height="23" rx="6" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.07)" stroke-width="1" />
+    <!-- Security Padlock -->
+    <g transform="translate(97, 37.5)">
+      <path d="M2.5 4.5 V3 A2.5 2.5 0 0 1 7.5 3 V4.5" fill="none" stroke="#10b981" stroke-width="1.2" stroke-linecap="round" />
+      <rect x="1" y="4.5" width="8" height="6" rx="1.5" fill="#10b981" />
+      <circle cx="5" cy="7.2" r="0.8" fill="#090a12" />
+    </g>
+    <!-- URL String -->
+    <text x="112" y="47.5" class="about_text_mono" font-size="10.5" fill="#94a3b8">https://<tspan fill="#f1f5f9" font-weight="600">bluedragon320.dev</tspan>/overview</text>
+    <!-- Blinking Monospace Cursor -->
+    <rect class="about_cursor" x="334" y="38" width="1.8" height="11" rx="0.5" fill="#22d3ee" />
+
+    <!-- Separator Line -->
+    <line x1="20" y1="64" x2="435" y2="64" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+
+    <!-- Card Title / Section Identifier -->
+    <g transform="translate(36, 75)">
+      <rect x="0" y="0" width="3.5" height="12" rx="1.5" fill="#22d3ee" />
+      <text x="10" y="10" class="about_text_sans" font-size="11" font-weight="700" letter-spacing="1.2" fill="#22d3ee">WHAT I BUILD // TECH PHILOSOPHY</text>
+      <text x="345" y="10" class="about_text_mono" font-size="9" fill="#64748b" text-anchor="end">[SYS.ACT]</text>
+    </g>
+
+    <!-- Row 1: Sangita Music Platform -->
+    <g transform="translate(36, 98)">
+      <rect x="0" y="0" width="383" height="92" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+      <rect x="0" y="8" width="3" height="76" rx="1.5" fill="url(#about_accent_cyan)" />
+
+      <!-- Glowing Icon Tile (Music Disc & Brackets) -->
+      <g transform="translate(12, 12)">
+        <rect x="0" y="0" width="42" height="42" rx="10" fill="url(#about_tile_cyan)" stroke="rgba(34,211,238,0.25)" stroke-width="1" />
+        <circle cx="21" cy="21" r="14" fill="#0c1726" stroke="#22d3ee" stroke-width="1" />
+        <circle cx="21" cy="21" r="10.5" fill="none" stroke="rgba(34,211,238,0.35)" stroke-width="0.8" stroke-dasharray="2 2" />
+        <circle cx="21" cy="21" r="7" fill="none" stroke="rgba(34,211,238,0.3)" stroke-width="0.8" />
+        <circle cx="21" cy="21" r="3.5" fill="#0284c7" />
+        <circle cx="21" cy="21" r="1.2" fill="#ffffff" />
+        <path d="M27 10 v6 a2 2 0 1 1 -1.5 -1.8 v-4.2 h4 v3 z" fill="#38bdf8" />
+      </g>
+
+      <text x="64" y="27" class="about_text_sans" font-size="13" font-weight="700" fill="#f8fafc">Sangita Music Platform</text>
+      <!-- Audio Arch Badge -->
+      <rect x="290" y="14" width="81" height="18" rx="4" fill="rgba(34,211,238,0.1)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8" />
+      <text x="330" y="26.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#38bdf8" text-anchor="middle">AUDIO ARCH</text>
+
+      <text x="64" y="44" class="about_text_sans" font-size="10.5" fill="#94a3b8">Self-hosted audio streamer with synced LRCLIB &amp; Whisper</text>
+      <text x="64" y="58" class="about_text_sans" font-size="10.5" fill="#94a3b8">AI lyrics. <tspan fill="#38bdf8" font-weight="600">React + Flask + Docker architecture.</tspan></text>
+
+      <!-- Tech Stack Tags -->
+      <g transform="translate(64, 68)">
+        <rect x="0" y="0" width="46" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="23" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">REACT</text>
+
+        <rect x="52" y="0" width="46" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="75" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">FLASK</text>
+
+        <rect x="104" y="0" width="54" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="131" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">DOCKER</text>
+
+        <rect x="164" y="0" width="50" height="15" rx="3" fill="rgba(34,211,238,0.06)" stroke="rgba(34,211,238,0.2)" stroke-width="0.8" />
+        <text x="189" y="10.5" class="about_text_mono" font-size="8" fill="#38bdf8" text-anchor="middle">LRCLIB</text>
+      </g>
+    </g>
+
+    <!-- Row 2: Arch Linux & Hyprland Rice -->
+    <g transform="translate(36, 200)">
+      <rect x="0" y="0" width="383" height="92" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+      <rect x="0" y="8" width="3" height="76" rx="1.5" fill="url(#about_accent_violet)" />
+
+      <!-- Glowing Icon Tile (Arch Linux & Terminal) -->
+      <g transform="translate(12, 12)">
+        <rect x="0" y="0" width="42" height="42" rx="10" fill="url(#about_tile_violet)" stroke="rgba(167,139,250,0.25)" stroke-width="1" />
+        <path d="M21 9 L28 27 L25 27 L22.5 21 L19.5 21 L17 27 L14 27 Z" fill="none" stroke="#a78bfa" stroke-width="1.4" stroke-linejoin="round" />
+        <text x="21" y="36" class="about_text_mono" font-size="10" font-weight="700" fill="#c084fc" text-anchor="middle">&gt;_</text>
+      </g>
+
+      <text x="64" y="27" class="about_text_sans" font-size="13" font-weight="700" fill="#f8fafc">Arch Linux &amp; Hyprland Rice</text>
+      <rect x="290" y="14" width="81" height="18" rx="4" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.25)" stroke-width="0.8" />
+      <text x="330" y="26.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#c084fc" text-anchor="middle">WAYLAND RICE</text>
+
+      <text x="64" y="44" class="about_text_sans" font-size="10.5" fill="#94a3b8">Minimalist Wayland setups, custom Waybar widgets,</text>
+      <text x="64" y="58" class="about_text_sans" font-size="10.5" fill="#94a3b8">automated monitor controls &amp; <tspan fill="#c084fc" font-weight="600">shell tooling.</tspan></text>
+
+      <!-- Tech Stack Tags -->
+      <g transform="translate(64, 68)">
+        <rect x="0" y="0" width="60" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="30" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">HYPRLAND</text>
+
+        <rect x="66" y="0" width="50" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="91" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">WAYBAR</text>
+
+        <rect x="122" y="0" width="40" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="142" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">ARCH</text>
+
+        <rect x="168" y="0" width="72" height="15" rx="3" fill="rgba(167,139,250,0.06)" stroke="rgba(167,139,250,0.2)" stroke-width="0.8" />
+        <text x="204" y="10.5" class="about_text_mono" font-size="8" fill="#c084fc" text-anchor="middle">BASH / PYTHON</text>
+      </g>
+    </g>
+
+    <!-- Row 3: Guardra Browser Suite -->
+    <g transform="translate(36, 302)">
+      <rect x="0" y="0" width="383" height="92" rx="10" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.05)" stroke-width="1" />
+      <rect x="0" y="8" width="3" height="76" rx="1.5" fill="url(#about_accent_pink)" />
+
+      <!-- Glowing Icon Tile (Security Shield) -->
+      <g transform="translate(12, 12)">
+        <rect x="0" y="0" width="42" height="42" rx="10" fill="url(#about_tile_pink)" stroke="rgba(244,114,182,0.25)" stroke-width="1" />
+        <path d="M21 9 L31 13 V21 C31 28 21 34 21 34 C21 34 11 28 11 21 V13 Z" fill="none" stroke="#f472b6" stroke-width="1.3" stroke-linejoin="round" />
+        <circle cx="21" cy="20" r="2.5" fill="#f472b6" />
+        <path d="M21 22.5 V26" stroke="#f472b6" stroke-width="1.4" stroke-linecap="round" />
+      </g>
+
+      <text x="64" y="27" class="about_text_sans" font-size="13" font-weight="700" fill="#f8fafc">Guardra Browser Suite</text>
+      <rect x="290" y="14" width="81" height="18" rx="4" fill="rgba(244,114,182,0.1)" stroke="rgba(244,114,182,0.25)" stroke-width="0.8" />
+      <text x="330" y="26.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#f472b6" text-anchor="middle">IDENTITY CORE</text>
+
+      <text x="64" y="44" class="about_text_sans" font-size="10.5" fill="#94a3b8">Privacy rating engine &amp; identity shield protecting</text>
+      <text x="64" y="58" class="about_text_sans" font-size="10.5" fill="#94a3b8">user telemetry and <tspan fill="#f472b6" font-weight="600">browsing footprint.</tspan></text>
+
+      <!-- Tech Stack Tags -->
+      <g transform="translate(64, 68)">
+        <rect x="0" y="0" width="86" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="43" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">PRIVACY ENGINE</text>
+
+        <rect x="92" y="0" width="70" height="15" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+        <text x="127" y="10.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">TELEMETRY</text>
+
+        <rect x="168" y="0" width="62" height="15" rx="3" fill="rgba(244,114,182,0.06)" stroke="rgba(244,114,182,0.2)" stroke-width="0.8" />
+        <text x="199" y="10.5" class="about_text_mono" font-size="8" fill="#f472b6" text-anchor="middle">SANDBOX</text>
+      </g>
+    </g>
+
+    <!-- Bottom Left Status Bar -->
+    <g transform="translate(36, 416)">
+      <circle cx="4" cy="4" r="3" fill="#10b981" class="about_pulse" />
+      <text x="14" y="7" class="about_text_mono" font-size="9" fill="#64748b">STATUS: ALL SYSTEMS ACTIVE // ARCH x86_64</text>
+      <text x="380" y="7" class="about_text_mono" font-size="9" fill="#475569" text-anchor="end">v2.5</text>
+    </g>
+  </g>
+
+  <!-- Right Card: Hobbies & Life Carousel (Shin-Chan Mode) -->
+  <g id="about_right_card">
+    <rect x="465" y="20" width="415" height="420" rx="16" fill="url(#about_card_base_grad)" stroke="rgba(255,255,255,0.08)" stroke-width="1.2" />
+    <rect x="465" y="20" width="415" height="420" rx="16" fill="url(#about_aurora_right)" clip-path="url(#about_card_right_clip)" />
+    <rect x="465" y="20" width="415" height="420" rx="16" fill="url(#about_dot_grid)" clip-path="url(#about_card_right_clip)" />
+    <!-- Top Glass Sheen -->
+    <rect x="465" y="20" width="415" height="60" rx="16" fill="url(#about_glass_sheen)" clip-path="url(#about_card_right_clip)" />
+
+    <!-- Card Header Badge: SHIN-CHAN ENERGY // LIFE.EXE -->
+    <g transform="translate(481, 32)">
+      <rect x="0" y="0" width="225" height="23" rx="11.5" fill="rgba(250,204,21,0.1)" stroke="rgba(250,204,21,0.3)" stroke-width="1" />
+      <!-- Action Kamen Star Icon -->
+      <g transform="translate(12, 11.5)">
+        <polygon points="0,-6 1.8,-1.8 6.5,-1.8 2.8,1.2 4.2,5.8 0,3 -4.2,5.8 -2.8,1.2 -6.5,-1.8 -1.8,-1.8" fill="#facc15" />
+      </g>
+      <text x="26" y="15.5" class="about_text_sans" font-size="10.5" font-weight="700" letter-spacing="1" fill="#facc15">SHIN-CHAN ENERGY // LIFE.EXE</text>
+    </g>
+
+    <!-- Live Story Pill Badge -->
+    <g transform="translate(805, 33)">
+      <rect x="0" y="0" width="59" height="21" rx="10.5" fill="rgba(239,68,68,0.12)" stroke="rgba(239,68,68,0.25)" stroke-width="0.8" />
+      <circle cx="11" cy="10.5" r="3" fill="#ef4444" class="about_pulse" />
+      <text x="21" y="14" class="about_text_mono" font-size="9" font-weight="700" fill="#f87171">STORY</text>
+    </g>
+
+    <!-- Instagram-Style Segmented Progress Bar (4 segments) -->
+    <g transform="translate(481, 64)">
+      <!-- Segment 1 Track & Fill -->
+      <rect x="0" y="0" width="88" height="3.5" rx="2" fill="rgba(255,255,255,0.12)" />
+      <rect class="about_pbar_1" x="0" y="0" width="88" height="3.5" rx="2" fill="url(#about_bar_grad)">
+        <animate attributeName="width" values="0; 88; 88; 88; 0" keyTimes="0; 0.23; 0.25; 0.98; 1" dur="16s" repeatCount="indefinite" />
+      </rect>
+
+      <!-- Segment 2 Track & Fill -->
+      <rect x="95" y="0" width="88" height="3.5" rx="2" fill="rgba(255,255,255,0.12)" />
+      <rect class="about_pbar_2" x="95" y="0" width="0" height="3.5" rx="2" fill="url(#about_bar_grad)">
+        <animate attributeName="width" values="0; 0; 88; 88; 88; 0" keyTimes="0; 0.23; 0.25; 0.48; 0.50; 1" dur="16s" repeatCount="indefinite" />
+      </rect>
+
+      <!-- Segment 3 Track & Fill -->
+      <rect x="190" y="0" width="88" height="3.5" rx="2" fill="rgba(255,255,255,0.12)" />
+      <rect class="about_pbar_3" x="190" y="0" width="0" height="3.5" rx="2" fill="url(#about_bar_grad)">
+        <animate attributeName="width" values="0; 0; 88; 88; 88; 0" keyTimes="0; 0.48; 0.50; 0.73; 0.75; 1" dur="16s" repeatCount="indefinite" />
+      </rect>
+
+      <!-- Segment 4 Track & Fill -->
+      <rect x="285" y="0" width="88" height="3.5" rx="2" fill="rgba(255,255,255,0.12)" />
+      <rect class="about_pbar_4" x="285" y="0" width="0" height="3.5" rx="2" fill="url(#about_bar_grad)">
+        <animate attributeName="width" values="0; 0; 88; 88; 0" keyTimes="0; 0.73; 0.75; 0.98; 1" dur="16s" repeatCount="indefinite" />
+      </rect>
+    </g>
+
+    <!-- Carousel Slides Container -->
+    <g clip-path="url(#about_slide_clip)">
+      <rect x="481" y="76" width="383" height="154" rx="12" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+
+      <!-- SLIDE 1: Audiophile & Music Lover -->
+      <g class="about_slide_1" opacity="1">
+        <animate attributeName="opacity" values="1; 1; 0; 0; 1" keyTimes="0; 0.23; 0.25; 0.98; 1" dur="16s" repeatCount="indefinite" />
+        <g transform="translate(497, 92)">
+          <rect x="0" y="0" width="168" height="18" rx="4" fill="rgba(34,211,238,0.1)" stroke="rgba(34,211,238,0.25)" stroke-width="0.8" />
+          <text x="84" y="12.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#22d3ee" text-anchor="middle">SLIDE 01 // AUDIO ARCHITECTURE</text>
+
+          <text x="0" y="38" class="about_text_sans" font-size="14" font-weight="700" fill="#f8fafc">🎵 Audiophile &amp; Music Lover</text>
+          <text x="0" y="56" class="about_text_sans" font-size="11" fill="#94a3b8">Building Sangita, curating playlists, analyzing synced</text>
+          <text x="0" y="71" class="about_text_sans" font-size="11" fill="#94a3b8">lyrics &amp; exploring lossless acoustic reproduction.</text>
+
+          <g transform="translate(0, 88)">
+            <rect x="0" y="0" width="85" height="16" rx="3" fill="rgba(34,211,238,0.08)" stroke="rgba(34,211,238,0.2)" stroke-width="0.8" />
+            <text x="42.5" y="11.5" class="about_text_mono" font-size="8" fill="#38bdf8" text-anchor="middle">24-BIT / 96kHz</text>
+
+            <rect x="91" y="0" width="75" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="128.5" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">WHISPER AI</text>
+
+            <rect x="172" y="0" width="80" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="212" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">SYNCED LYRICS</text>
+          </g>
+
+          <!-- Visual Graphic: Animated Equalizer Visualizer Bars -->
+          <g transform="translate(262, 8)">
+            <rect x="0" y="0" width="88" height="72" rx="8" fill="rgba(0,0,0,0.3)" stroke="rgba(34,211,238,0.2)" stroke-width="0.8" />
+            <!-- 6 Equalizer Bars -->
+            <rect class="about_eq_1" x="12" y="32" width="6" height="16" rx="3" fill="url(#about_accent_cyan)">
+              <animate attributeName="height" values="16; 6; 26; 16" dur="1.2s" repeatCount="indefinite" />
+              <animate attributeName="y" values="32; 42; 22; 32" dur="1.2s" repeatCount="indefinite" />
+            </rect>
+            <rect class="about_eq_2" x="23" y="24" width="6" height="24" rx="3" fill="url(#about_accent_cyan)">
+              <animate attributeName="height" values="24; 12; 28; 24" dur="0.9s" repeatCount="indefinite" />
+              <animate attributeName="y" values="24; 36; 20; 24" dur="0.9s" repeatCount="indefinite" />
+            </rect>
+            <rect class="about_eq_3" x="34" y="28" width="6" height="20" rx="3" fill="url(#about_accent_violet)">
+              <animate attributeName="height" values="20; 28; 8; 20" dur="1.4s" repeatCount="indefinite" />
+              <animate attributeName="y" values="28; 20; 40; 28" dur="1.4s" repeatCount="indefinite" />
+            </rect>
+            <rect class="about_eq_4" x="45" y="20" width="6" height="28" rx="3" fill="url(#about_accent_pink)">
+              <animate attributeName="height" values="28; 10; 30; 28" dur="1.1s" repeatCount="indefinite" />
+              <animate attributeName="y" values="20; 38; 18; 20" dur="1.1s" repeatCount="indefinite" />
+            </rect>
+            <rect class="about_eq_5" x="56" y="30" width="6" height="18" rx="3" fill="url(#about_accent_pink)">
+              <animate attributeName="height" values="18; 26; 12; 18" dur="1.3s" repeatCount="indefinite" />
+              <animate attributeName="y" values="30; 22; 36; 30" dur="1.3s" repeatCount="indefinite" />
+            </rect>
+            <rect class="about_eq_6" x="67" y="26" width="6" height="22" rx="3" fill="url(#about_accent_cyan)">
+              <animate attributeName="height" values="22; 8; 24; 22" dur="1.0s" repeatCount="indefinite" />
+              <animate attributeName="y" values="26; 40; 24; 26" dur="1.0s" repeatCount="indefinite" />
+            </rect>
+            <text x="44" y="62" class="about_text_mono" font-size="7.5" fill="#64748b" text-anchor="middle">STREAMING</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- SLIDE 2: Aviation & Airplane Spotting -->
+      <g class="about_slide_2" opacity="0">
+        <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.23; 0.25; 0.48; 0.50; 1" dur="16s" repeatCount="indefinite" />
+        <g transform="translate(497, 92)">
+          <rect x="0" y="0" width="168" height="18" rx="4" fill="rgba(56,189,248,0.1)" stroke="rgba(56,189,248,0.25)" stroke-width="0.8" />
+          <text x="84" y="12.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#38bdf8" text-anchor="middle">SLIDE 02 // SKYWATCH &amp; FLIGHT</text>
+
+          <text x="0" y="38" class="about_text_sans" font-size="14" font-weight="700" fill="#f8fafc">✈️ Aviation &amp; Airplane Spotting</text>
+          <text x="0" y="56" class="about_text_sans" font-size="11" fill="#94a3b8">Fascinated by aerodynamics, flight tracking, commercial</text>
+          <text x="0" y="71" class="about_text_sans" font-size="11" fill="#94a3b8">avionics, engine mechanics &amp; route telemetry.</text>
+
+          <g transform="translate(0, 88)">
+            <rect x="0" y="0" width="65" height="16" rx="3" fill="rgba(56,189,248,0.08)" stroke="rgba(56,189,248,0.2)" stroke-width="0.8" />
+            <text x="32.5" y="11.5" class="about_text_mono" font-size="8" fill="#38bdf8" text-anchor="middle">FL380 CRZ</text>
+
+            <rect x="71" y="0" width="65" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="103.5" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">490 KTS</text>
+
+            <rect x="142" y="0" width="85" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="184.5" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">ADS-B TRACK</text>
+          </g>
+
+          <!-- Visual Graphic: Jet Airplane Vector & Radar Ring -->
+          <g transform="translate(262, 8)">
+            <rect x="0" y="0" width="88" height="72" rx="8" fill="rgba(0,0,0,0.3)" stroke="rgba(56,189,248,0.2)" stroke-width="0.8" />
+            <circle cx="44" cy="34" r="24" fill="none" stroke="rgba(56,189,248,0.18)" stroke-width="0.8" stroke-dasharray="3 3" />
+            <circle cx="44" cy="34" r="14" fill="none" stroke="rgba(56,189,248,0.12)" stroke-width="0.8" />
+            <!-- Animated Dashed Contrail -->
+            <path class="about_contrail" d="M16 52 Q 28 44 44 32" fill="none" stroke="#38bdf8" stroke-width="1.6" stroke-dasharray="3 3">
+              <animate attributeName="stroke-dashoffset" from="24" to="0" dur="1.5s" repeatCount="indefinite" />
+            </path>
+            <!-- Jet Airplane Silhouette -->
+            <g transform="translate(44, 30) rotate(-35)">
+              <path d="M0 -14 C1.8 -14 2.8 -6 2.8 9 L0 10.5 L-2.8 9 C-2.8 -6 -1.8 -14 0 -14 Z" fill="#f8fafc" />
+              <path d="M0 -3 L14 7 L14 9 L0 5 L-14 9 L-14 7 Z" fill="#38bdf8" />
+              <path d="M0 6 L6 12 L0 11 L-6 12 Z" fill="#0284c7" />
+              <rect x="4" y="0" width="2" height="5" rx="1" fill="#94a3b8" />
+              <rect x="-6" y="0" width="2" height="5" rx="1" fill="#94a3b8" />
+            </g>
+            <text x="44" y="62" class="about_text_mono" font-size="7.5" fill="#38bdf8" text-anchor="middle">A350-900</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- SLIDE 3: Linux Enthusiast -->
+      <g class="about_slide_3" opacity="0">
+        <animate attributeName="opacity" values="0; 0; 1; 1; 0; 0" keyTimes="0; 0.48; 0.50; 0.73; 0.75; 1" dur="16s" repeatCount="indefinite" />
+        <g transform="translate(497, 92)">
+          <rect x="0" y="0" width="168" height="18" rx="4" fill="rgba(167,139,250,0.1)" stroke="rgba(167,139,250,0.25)" stroke-width="0.8" />
+          <text x="84" y="12.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#a78bfa" text-anchor="middle">SLIDE 03 // LINUX &amp; RICE</text>
+
+          <text x="0" y="38" class="about_text_sans" font-size="14" font-weight="700" fill="#f8fafc">🐧 Linux Enthusiast</text>
+          <text x="0" y="56" class="about_text_sans" font-size="11" fill="#94a3b8">Customizing Hyprland configs, optimizing kernel</text>
+          <text x="0" y="71" class="about_text_sans" font-size="11" fill="#94a3b8">performance, building automated widgets &amp; dotfiles.</text>
+
+          <g transform="translate(0, 88)">
+            <rect x="0" y="0" width="70" height="16" rx="3" fill="rgba(167,139,250,0.08)" stroke="rgba(167,139,250,0.2)" stroke-width="0.8" />
+            <text x="35" y="11.5" class="about_text_mono" font-size="8" fill="#c084fc" text-anchor="middle">HYPRLAND</text>
+
+            <rect x="76" y="0" width="60" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="106" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">WAYLAND</text>
+
+            <rect x="142" y="0" width="70" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="177" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">DOTFILES</text>
+          </g>
+
+          <!-- Visual Graphic: Hyprland Tiled Windows Preview -->
+          <g transform="translate(262, 8)">
+            <rect x="0" y="0" width="88" height="72" rx="8" fill="rgba(0,0,0,0.3)" stroke="rgba(167,139,250,0.2)" stroke-width="0.8" />
+            <!-- Master Window Left -->
+            <rect x="8" y="10" width="38" height="42" rx="4" fill="rgba(167,139,250,0.12)" stroke="#a78bfa" stroke-width="0.9" />
+            <circle cx="13" cy="14" r="1" fill="#ef4444" />
+            <circle cx="16.5" cy="14" r="1" fill="#eab308" />
+            <circle cx="20" cy="14" r="1" fill="#10b981" />
+            <text x="12" y="24" class="about_text_mono" font-size="6" fill="#a78bfa">&gt;_ sh</text>
+            <rect x="12" y="28" width="22" height="2" rx="1" fill="#c084fc" />
+            <rect x="12" y="33" width="16" height="2" rx="1" fill="#64748b" />
+            <rect x="12" y="38" width="18" height="2" rx="1" fill="#38bdf8" />
+            <!-- Stack Window 1 Top Right -->
+            <rect x="50" y="10" width="30" height="19" rx="4" fill="rgba(34,211,238,0.08)" stroke="#22d3ee" stroke-width="0.8" />
+            <rect x="54" y="15" width="16" height="2" rx="1" fill="#22d3ee" />
+            <rect x="54" y="20" width="20" height="2" rx="1" fill="#475569" />
+            <!-- Stack Window 2 Bottom Right -->
+            <rect x="50" y="33" width="30" height="19" rx="4" fill="rgba(244,114,182,0.08)" stroke="#f472b6" stroke-width="0.8" />
+            <circle cx="58" cy="42" r="3" fill="none" stroke="#f472b6" stroke-width="0.8" />
+            <path d="M64 42 h10" stroke="#f472b6" stroke-width="0.8" stroke-linecap="round" />
+            <text x="44" y="62" class="about_text_mono" font-size="7.5" fill="#a78bfa" text-anchor="middle">WORKSPACE 1</text>
+          </g>
+        </g>
+      </g>
+
+      <!-- SLIDE 4: Shin-chan & Action Kamen Fan -->
+      <g class="about_slide_4" opacity="0">
+        <animate attributeName="opacity" values="0; 0; 1; 1; 0" keyTimes="0; 0.73; 0.75; 0.98; 1" dur="16s" repeatCount="indefinite" />
+        <g transform="translate(497, 92)">
+          <rect x="0" y="0" width="168" height="18" rx="4" fill="rgba(250,204,21,0.1)" stroke="rgba(250,204,21,0.25)" stroke-width="0.8" />
+          <text x="84" y="12.5" class="about_text_mono" font-size="8.5" font-weight="700" fill="#facc15" text-anchor="middle">SLIDE 04 // MAXIMUM ENERGY</text>
+
+          <text x="0" y="38" class="about_text_sans" font-size="14" font-weight="700" fill="#f8fafc">⚡ Shin-chan &amp; Action Kamen Fan</text>
+          <text x="0" y="56" class="about_text_sans" font-size="11" fill="#94a3b8">Chocobi snacking, laughing through bugs, staying</text>
+          <text x="0" y="71" class="about_text_sans" font-size="11" fill="#94a3b8">endlessly curious &amp; unstoppable in spirit!</text>
+
+          <g transform="translate(0, 88)">
+            <rect x="0" y="0" width="85" height="16" rx="3" fill="rgba(250,204,21,0.08)" stroke="rgba(250,204,21,0.2)" stroke-width="0.8" />
+            <text x="42.5" y="11.5" class="about_text_mono" font-size="8" fill="#facc15" text-anchor="middle">CHOCOBI 100%</text>
+
+            <rect x="91" y="0" width="85" height="16" rx="3" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="0.8" />
+            <text x="133.5" y="11.5" class="about_text_mono" font-size="8" fill="#cbd5e1" text-anchor="middle">ACTION BEAM</text>
+
+            <rect x="182" y="0" width="70" height="16" rx="3" fill="rgba(244,114,182,0.08)" stroke="rgba(244,114,182,0.2)" stroke-width="0.8" />
+            <text x="217" y="11.5" class="about_text_mono" font-size="8" fill="#f472b6" text-anchor="middle">NO STRESS</text>
+          </g>
+
+          <!-- Visual Graphic: Action Kamen Lightning & Star -->
+          <g transform="translate(262, 8)">
+            <rect x="0" y="0" width="88" height="72" rx="8" fill="rgba(0,0,0,0.3)" stroke="rgba(250,204,21,0.2)" stroke-width="0.8" />
+            <!-- Action Kamen Mask Visor -->
+            <path d="M22 28 C28 20 60 20 66 28 C60 33 28 33 22 28 Z" fill="#15803d" stroke="#14532d" stroke-width="0.8" />
+            <ellipse cx="34" cy="27" rx="5" ry="2.5" fill="#ef4444" />
+            <ellipse cx="54" cy="27" rx="5" ry="2.5" fill="#ef4444" />
+            <!-- Lightning Zap -->
+            <polygon points="44,10 47.5,20 43,20 45.5,30 38.5,18 42.5,18" fill="#facc15" />
+            <!-- Star Biscuit -->
+            <polygon points="70,36 72,41 77,41 73,44 75,49 70,46 65,49 67,44 63,41 68,41" fill="#facc15" stroke="#eab308" stroke-width="0.6" />
+            <text x="44" y="62" class="about_text_mono" font-size="7.5" fill="#facc15" text-anchor="middle">BEAAAM!!</text>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <!-- Bottom Section: Daily Activity Rings & Shin-Chan -->
+    <g id="about_bottom_right">
+      <g transform="translate(485, 246)">
+        <text x="0" y="10" class="about_text_sans" font-size="10.5" font-weight="700" letter-spacing="1" fill="#94a3b8">DAILY ACTIVITY METRICS</text>
+        <line x1="0" y1="18" x2="375" y2="18" stroke="rgba(255,255,255,0.06)" stroke-width="1" />
+      </g>
+
+      <!-- 3 Concentric Activity Rings (Center: cx=542, cy=340) -->
+      <g id="about_rings_group">
+        <!-- Ring 1: Code (Cyan 96%) -->
+        <circle cx="542" cy="340" r="44" fill="none" stroke="rgba(34,211,238,0.12)" stroke-width="8" />
+        <circle class="about_ring_1" cx="542" cy="340" r="44" fill="none" stroke="url(#about_ring_cyan)" stroke-width="8" stroke-linecap="round" stroke-dasharray="276.46" stroke-dashoffset="11.06" transform="rotate(-90 542 340)">
+          <animate attributeName="stroke-dashoffset" values="276.46; 11.06; 4.0; 11.06" dur="7s" repeatCount="indefinite" keyTimes="0; 0.35; 0.75; 1" />
+        </circle>
+
+        <!-- Ring 2: Music (Pink 90%) -->
+        <circle cx="542" cy="340" r="33" fill="none" stroke="rgba(244,114,182,0.12)" stroke-width="8" />
+        <circle class="about_ring_2" cx="542" cy="340" r="33" fill="none" stroke="url(#about_ring_pink)" stroke-width="8" stroke-linecap="round" stroke-dasharray="207.35" stroke-dashoffset="20.73" transform="rotate(-90 542 340)">
+          <animate attributeName="stroke-dashoffset" values="207.35; 20.73; 12.0; 20.73" dur="7s" repeatCount="indefinite" keyTimes="0; 0.35; 0.75; 1" />
+        </circle>
+
+        <!-- Ring 3: Chocobi / Fun (Gold 100%) -->
+        <circle cx="542" cy="340" r="22" fill="none" stroke="rgba(250,204,21,0.12)" stroke-width="8" />
+        <circle class="about_ring_3" cx="542" cy="340" r="22" fill="none" stroke="url(#about_ring_gold)" stroke-width="8" stroke-linecap="round" stroke-dasharray="138.23" stroke-dashoffset="0" transform="rotate(-90 542 340)">
+          <animate attributeName="stroke-dashoffset" values="138.23; 0; -2.0; 0" dur="7s" repeatCount="indefinite" keyTimes="0; 0.35; 0.75; 1" />
+        </circle>
+      </g>
+
+      <!-- Rings Legend & Stats -->
+      <g transform="translate(602, 280)">
+        <!-- Legend Item 1: Code 96% -->
+        <circle cx="4" cy="5" r="3.5" fill="#22d3ee" />
+        <text x="14" y="9" class="about_text_sans" font-size="11.5" font-weight="600" fill="#e2e8f0">Code</text>
+        <text x="115" y="9" class="about_text_mono" font-size="11.5" font-weight="700" fill="#22d3ee" text-anchor="end">96%</text>
+
+        <!-- Legend Item 2: Music 90% -->
+        <g transform="translate(0, 26)">
+          <circle cx="4" cy="5" r="3.5" fill="#f472b6" />
+          <text x="14" y="9" class="about_text_sans" font-size="11.5" font-weight="600" fill="#e2e8f0">Music</text>
+          <text x="115" y="9" class="about_text_mono" font-size="11.5" font-weight="700" fill="#f472b6" text-anchor="end">90%</text>
+        </g>
+
+        <!-- Legend Item 3: Chocobi / Fun 100% -->
+        <g transform="translate(0, 52)">
+          <circle cx="4" cy="5" r="3.5" fill="#facc15" />
+          <text x="14" y="9" class="about_text_sans" font-size="11.5" font-weight="600" fill="#e2e8f0">Chocobi</text>
+          <text x="115" y="9" class="about_text_mono" font-size="11.5" font-weight="700" fill="#facc15" text-anchor="end">100%</text>
+        </g>
+
+        <!-- Streak Status Subtitle -->
+        <g transform="translate(0, 84)">
+          <rect x="-4" y="-3" width="122" height="18" rx="4" fill="rgba(250,204,21,0.08)" stroke="rgba(250,204,21,0.2)" stroke-width="0.8" />
+          <text x="57" y="9.5" class="about_text_mono" font-size="8.5" font-weight="600" fill="#facc15" text-anchor="middle">🔥 320D STREAK</text>
+        </g>
+      </g>
+
+      <!-- Decorative Shin-Chan Chibi Art in Corner -->
+      <g clip-path="url(#about_card_right_clip)">
+        <g class="about_chibi" transform="translate(730, 268)">
+          <!-- Floating Chocobi Star Biscuit -->
+          <g class="about_star" transform="translate(10, -20)">
+            <polygon points="10,0 12.5,6.5 19.5,7.5 14,12.5 15.5,19.5 10,15.5 4.5,19.5 6,12.5 0.5,7.5 7.5,6.5" fill="#facc15" stroke="#eab308" stroke-width="0.8" />
+            <circle cx="8" cy="9" r="0.9" fill="#78350f" />
+            <circle cx="12" cy="11" r="0.9" fill="#78350f" />
+            <circle cx="10" cy="6" r="0.8" fill="#78350f" />
+          </g>
+
+          <!-- Shin-chan Body / Red Shirt -->
+          <path d="M42 124 C36 116 48 112 65 112 C82 112 95 116 90 124 L100 156 L30 156 Z" fill="#ef4444" stroke="#b91c1c" stroke-width="1.2" />
+          <!-- Action Kamen Insignia on Shirt -->
+          <circle cx="65" cy="132" r="7" fill="#facc15" stroke="#ca8a04" stroke-width="0.8" />
+          <text x="65" y="135.5" class="about_text_sans" font-size="8" font-weight="900" fill="#1e293b" text-anchor="middle">A</text>
+
+          <!-- Shin-chan Head Base (Peach Skin) with iconic bulgy cheek -->
+          <path d="M54 38 C40 38 30 48 30 62 C30 68 27 72 22 80 C17 89 20 98 28 104 C36 110 47 112 64 112 C84 112 100 101 102 84 C104 68 97 48 82 40 C74 34 64 38 54 38 Z" fill="#fed7aa" stroke="#1e293b" stroke-width="1.8" />
+
+          <!-- Cropped Black Buzzcut Hair -->
+          <path d="M40 42 C34 46 30 54 30 62 C31 52 38 41 54 38 C70 35 86 40 94 48 C100 54 102 64 102 70 C103 61 98 46 86 39 C76 32 60 32 46 37 C43 38 41 40 40 42 Z" fill="#0f172a" />
+
+          <!-- Right Ear -->
+          <path d="M101 74 C108 73 110 82 106 89 C103 92 99 92 97 89" fill="#fed7aa" stroke="#1e293b" stroke-width="1.8" />
+          <path d="M102 79 C104 79 105 83 102 85" fill="none" stroke="#d97706" stroke-width="1.2" />
+
+          <!-- Thick Caterpillar Eyebrows (Authentic Shin-chan) -->
+          <path d="M34 59 C38 52 52 51 57 56 C55 61 40 64 34 59 Z" fill="#0f172a" />
+          <path d="M68 56 C74 51 88 52 92 59 C86 64 72 61 68 56 Z" fill="#0f172a" />
+
+          <!-- Eyes (Big Shin-chan eyes) -->
+          <ellipse cx="48" cy="70" rx="5.5" ry="7.5" fill="#0f172a" />
+          <circle cx="46" cy="68" r="2.2" fill="#ffffff" />
+          <ellipse cx="80" cy="70" rx="5.5" ry="7.5" fill="#0f172a" />
+          <circle cx="78" cy="68" r="2.2" fill="#ffffff" />
+
+          <!-- Rosy Cheek Blush -->
+          <ellipse cx="32" cy="88" rx="6.5" ry="4" fill="#f472b6" opacity="0.6" />
+          <ellipse cx="90" cy="86" rx="6.5" ry="4" fill="#f472b6" opacity="0.6" />
+
+          <!-- Smile (Happy open grin) -->
+          <path d="M56 84 C58 94 70 94 74 84 Z" fill="#dc2626" stroke="#1e293b" stroke-width="1.4" />
+          <path d="M60 89 C63 86 67 86 70 89 C67 92 63 92 60 89 Z" fill="#f472b6" />
+
+          <!-- Action Kamen Superhero Mini Mask on Head -->
+          <g transform="translate(48, 20)">
+            <path d="M-10 12 C-6 4 6 2 18 2 C30 2 42 4 46 12 C38 14 28 13 18 13 C8 13 -2 14 -10 12 Z" fill="#15803d" stroke="#14532d" stroke-width="1" />
+            <ellipse cx="6" cy="9" rx="5" ry="2.5" fill="#ef4444" />
+            <ellipse cx="30" cy="9" rx="5" ry="2.5" fill="#ef4444" />
+            <!-- Mask Antenna Lightning -->
+            <polygon points="18,-5 21,3 17,3 20,8 14,2 17,2" fill="#facc15" />
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

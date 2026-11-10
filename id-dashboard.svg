@@ -1,0 +1,646 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" width="100%" height="480">
+  <defs>
+    <!-- Midnight Glass Card Background Gradient -->
+    <linearGradient id="dash_bg_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0d15"/>
+      <stop offset="50%" stop-color="#0e101b"/>
+      <stop offset="100%" stop-color="#090a10"/>
+    </linearGradient>
+
+    <!-- Glass Edge Highlight Gradient -->
+    <linearGradient id="dash_glass_edge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.25)"/>
+      <stop offset="35%" stop-color="rgba(255, 255, 255, 0.08)"/>
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)"/>
+    </linearGradient>
+
+    <!-- Metallic Clasp & Clip Gradient (#94a3b8 to #cbd5e1) -->
+    <linearGradient id="dash_metal_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#94a3b8"/>
+      <stop offset="25%" stop-color="#f1f5f9"/>
+      <stop offset="50%" stop-color="#64748b"/>
+      <stop offset="75%" stop-color="#cbd5e1"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+
+    <!-- Lanyard Strap Gradient -->
+    <linearGradient id="dash_strap_grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="25%" stop-color="#312e81"/>
+      <stop offset="50%" stop-color="#4338ca"/>
+      <stop offset="75%" stop-color="#312e81"/>
+      <stop offset="100%" stop-color="#1e1b4b"/>
+    </linearGradient>
+
+    <!-- Gold Microchip Gradient (#fbbf24) -->
+    <linearGradient id="dash_gold_chip" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="30%" stop-color="#fbbf24"/>
+      <stop offset="70%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+
+    <!-- Aurora Ramp Traveling Border Gradient -->
+    <linearGradient id="dash_aurora_gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="33%" stop-color="#a78bfa"/>
+      <stop offset="66%" stop-color="#f472b6"/>
+      <stop offset="100%" stop-color="#facc15"/>
+    </linearGradient>
+
+    <!-- Holographic Sheen Gradient -->
+    <linearGradient id="dash_holo_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+      <stop offset="20%" stop-color="#22d3ee" stop-opacity="0.32"/>
+      <stop offset="45%" stop-color="#a78bfa" stop-opacity="0.38"/>
+      <stop offset="65%" stop-color="#f472b6" stop-opacity="0.32"/>
+      <stop offset="85%" stop-color="#facc15" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Bar Chart Repository Gradients -->
+    <!-- 1. Sangita: Cyan to Blue -->
+    <linearGradient id="dash_bar_grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <!-- 2. Guardra: Violet to Pink -->
+    <linearGradient id="dash_bar_grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <!-- 3. Product-Catalogue-Search: Sky to Indigo -->
+    <linearGradient id="dash_bar_grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7"/>
+      <stop offset="100%" stop-color="#6366f1"/>
+    </linearGradient>
+    <!-- 4. Additional-Monitor-Widget: Rose to Amber -->
+    <linearGradient id="dash_bar_grad4" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+    <!-- 5. multi-account-monitor: Amber to Gold -->
+    <linearGradient id="dash_bar_grad5" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+
+    <!-- Aurora Background Glow Spots -->
+    <radialGradient id="dash_glow_cyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dash_glow_violet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity="0.11"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dash_glow_pink" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#f472b6" stop-opacity="0.09"/>
+      <stop offset="100%" stop-color="#f472b6" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Dot Grid Pattern -->
+    <pattern id="dash_grid_pattern" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#ffffff" fill-opacity="0.045"/>
+    </pattern>
+
+    <!-- Clip Paths -->
+    <clipPath id="dash_badge_clip">
+      <rect x="42" y="78" width="256" height="384" rx="14" ry="14"/>
+    </clipPath>
+    <clipPath id="dash_photo_clip">
+      <rect x="54" y="132" width="112" height="118" rx="8" ry="8"/>
+    </clipPath>
+  </defs>
+
+  <style>
+    /* Typography: System Fonts */
+    text {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    .dash_mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    }
+
+    /* Pendulum Physics Swing */
+    @keyframes dash_pendulum {
+      0% {
+        transform: rotate(-2.8deg);
+      }
+      100% {
+        transform: rotate(2.8deg);
+      }
+    }
+    .dash_badge_assembly {
+      transform-origin: 170px 0px;
+      animation: dash_pendulum 6s ease-in-out infinite alternate;
+    }
+
+    /* Travelling Light Border */
+    @keyframes dash_borderRun {
+      0% {
+        stroke-dashoffset: 442;
+      }
+      100% {
+        stroke-dashoffset: 0;
+      }
+    }
+    .dash_photo_border_run {
+      stroke-dasharray: 90 352;
+      animation: dash_borderRun 3.6s linear infinite;
+    }
+
+    /* Holographic Foil Sweep */
+    @keyframes dash_holo {
+      0% {
+        transform: translate(-100px, 0px) rotate(25deg);
+        opacity: 0;
+      }
+      15% {
+        opacity: 0.85;
+      }
+      85% {
+        opacity: 0.85;
+      }
+      100% {
+        transform: translate(380px, 80px) rotate(25deg);
+        opacity: 0;
+      }
+    }
+    .dash_holo_sweep {
+      animation: dash_holo 4s ease-in-out infinite;
+    }
+
+    /* Live Pulse Status Dot */
+    @keyframes dash_pulse {
+      0% {
+        r: 3.5px;
+        opacity: 0.9;
+        stroke-width: 1.5px;
+      }
+      100% {
+        r: 12px;
+        opacity: 0;
+        stroke-width: 0.5px;
+      }
+    }
+    .dash_pulse_ring {
+      animation: dash_pulse 2.2s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+    }
+
+    /* Repository Bar Growth Animation */
+    @keyframes dash_barGrow {
+      0% {
+        transform: scaleX(0);
+      }
+      100% {
+        transform: scaleX(1);
+      }
+    }
+    .dash_bar {
+      transform-origin: 0px 0px;
+      animation: dash_barGrow 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Terminal Equalizer Animations */
+    @keyframes dash_eq1 { 0%, 100% { height: 4px; y: 14px; } 50% { height: 14px; y: 4px; } }
+    @keyframes dash_eq2 { 0%, 100% { height: 13px; y: 5px; } 50% { height: 5px; y: 13px; } }
+    @keyframes dash_eq3 { 0%, 100% { height: 6px; y: 12px; } 50% { height: 15px; y: 3px; } }
+    @keyframes dash_eq4 { 0%, 100% { height: 12px; y: 6px; } 50% { height: 4px; y: 14px; } }
+    @keyframes dash_eq5 { 0%, 100% { height: 5px; y: 13px; } 50% { height: 13px; y: 5px; } }
+
+    .dash_eq_bar1 { animation: dash_eq1 0.75s ease-in-out infinite; }
+    .dash_eq_bar2 { animation: dash_eq2 1.05s ease-in-out infinite 0.15s; }
+    .dash_eq_bar3 { animation: dash_eq3 0.85s ease-in-out infinite 0.35s; }
+    .dash_eq_bar4 { animation: dash_eq4 1.25s ease-in-out infinite 0.1s; }
+    .dash_eq_bar5 { animation: dash_eq5 0.95s ease-in-out infinite 0.25s; }
+
+    /* Blinking Terminal Cursor */
+    @keyframes dash_blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+    .dash_cursor {
+      animation: dash_blink 1.1s steps(2, start) infinite;
+    }
+  </style>
+
+  <!-- Root Canvas Background -->
+  <rect width="900" height="480" rx="16" fill="url(#dash_bg_grad)" stroke="#1e2238" stroke-width="1.5"/>
+
+  <!-- Subtle Dot Grid Overlay -->
+  <rect width="900" height="480" rx="16" fill="url(#dash_grid_pattern)"/>
+
+  <!-- Background Ambient Aurora Glows -->
+  <circle cx="160" cy="180" r="160" fill="url(#dash_glow_cyan)"/>
+  <circle cx="700" cy="110" r="210" fill="url(#dash_glow_violet)"/>
+  <circle cx="560" cy="380" r="180" fill="url(#dash_glow_pink)"/>
+
+  <!-- ======================================================== -->
+  <!-- LEFT SIDE: HANGING & SWINGING LANYARD ID BADGE (x=30..310)-->
+  <!-- ======================================================== -->
+  <g class="dash_badge_assembly">
+    <!-- Lanyard Strap coming down from top (pivot at 170, 0) -->
+    <path d="M 124 0 L 160 52 L 180 52 L 216 0 Z" fill="url(#dash_strap_grad)"/>
+    <path d="M 124 0 L 160 52" stroke="#4f46e5" stroke-width="1.2" opacity="0.6"/>
+    <path d="M 216 0 L 180 52" stroke="#4f46e5" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Lanyard Printed Text Banner -->
+    <rect x="94" y="16" width="152" height="18" rx="4" fill="#0d0f1e" stroke="#312e81" stroke-width="0.8"/>
+    <text x="170" y="28.5" text-anchor="middle" font-size="7" font-weight="800" fill="#a78bfa" letter-spacing="1">★ KASUKABE DEFENSE CORPS // DEV-007 ★</text>
+
+    <!-- Metal Clasp & Badge Clip Assembly -->
+    <rect x="159" y="50" width="22" height="7" rx="2" fill="url(#dash_metal_grad)" stroke="#334155" stroke-width="0.8"/>
+    <ellipse cx="170" cy="61" rx="5" ry="4" fill="url(#dash_metal_grad)" stroke="#475569" stroke-width="0.8"/>
+    <!-- Metallic Hook Loop through badge cutout -->
+    <path d="M 166 64 C 166 60 174 60 174 64 L 174 84 C 174 88 166 88 166 84 Z" fill="none" stroke="url(#dash_metal_grad)" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 167 71 L 173 75" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+
+    <!-- BADGE HOLDER CARD BODY -->
+    <rect x="42" y="78" width="256" height="384" rx="14" ry="14" fill="#101222" stroke="url(#dash_glass_edge)" stroke-width="1.5"/>
+    <rect x="44" y="80" width="252" height="380" rx="12" ry="12" fill="none" stroke="rgba(255, 255, 255, 0.04)" stroke-width="1"/>
+
+    <!-- Punch Hole Cutout for Lanyard Clip -->
+    <rect x="153" y="86" width="34" height="6.5" rx="3.2" fill="#090a12" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+
+    <!-- Top Badge Header Banner -->
+    <g transform="translate(52, 101)">
+      <rect width="236" height="24" rx="5" fill="#17182c" stroke="#4338ca" stroke-width="0.8"/>
+      <!-- Star Logo -->
+      <polygon points="14,6.5 15.8,11.5 21,11.8 17,15.2 18.2,20.5 14,17.5 9.8,20.5 11,15.2 7,11.8 12.2,11.5" fill="#facc15" stroke="#ca8a04" stroke-width="0.6"/>
+      <text x="27" y="12.5" font-size="7.5" font-weight="800" fill="#f8fafc" letter-spacing="0.8">KASUKABE DEFENSE FORCE</text>
+      <text x="27" y="19.5" font-size="6.2" font-weight="700" fill="#22d3ee" letter-spacing="0.6">TECH DIVISION // ACTION DEV</text>
+      <!-- Online Status Dot -->
+      <circle cx="225" cy="12" r="2.8" fill="#22c55e"/>
+      <circle cx="225" cy="12" r="4.5" fill="none" stroke="#22c55e" stroke-width="0.8" opacity="0.6"/>
+    </g>
+
+    <!-- PHOTO FRAME (x=54, y=132, w=112, h=118) -->
+    <!-- Frame Base Background -->
+    <rect x="54" y="132" width="112" height="118" rx="8" fill="#0b0d19" stroke="#1e2238" stroke-width="1.2"/>
+
+    <!-- Shin Chan Character Illustration Clipped to Photo Frame -->
+    <g clip-path="url(#dash_photo_clip)">
+      <!-- Backdrop Radial Glow & Starfield -->
+      <rect x="54" y="132" width="112" height="118" fill="#13152c"/>
+      <circle cx="110" cy="191" r="50" fill="#1e1b4b" opacity="0.85"/>
+      <path d="M 68 144 L 69 147 L 72 148 L 69 149 L 68 152 L 67 149 L 64 148 L 67 147 Z" fill="#facc15" opacity="0.7"/>
+      <path d="M 152 148 L 153 150 L 155 151 L 153 152 L 152 154 L 151 152 L 149 151 L 151 150 Z" fill="#22d3ee" opacity="0.7"/>
+
+      <!-- SHIN CHAN CHARACTER VECTOR -->
+      <g transform="translate(25, 117)">
+        <!-- Hair Base / Back Silhouette -->
+        <path d="M 52 52 C 48 36 60 22 78 22 C 92 22 104 28 106 42 C 102 36 92 30 78 30 C 64 30 54 38 52 52 Z" fill="#18181b"/>
+
+        <!-- Head Contour (Famous Chubby Cheek Profile) -->
+        <path d="M 54 52 C 52 40 64 30 80 30 C 96 30 106 38 108 48 C 110 54 125 58 126 68 C 127 78 118 84 108 86 C 100 88 94 89 86 89 C 74 89 65 85 58 77 C 54 70 54 60 54 52 Z" fill="#ffd9b3" stroke="#231710" stroke-width="2.2" stroke-linejoin="round"/>
+
+        <!-- Hair Cropped Cap -->
+        <path d="M 53 50 C 51 38 62 26 80 25 C 96 25 107 34 107 46 C 104 38 94 32 80 32 C 65 32 55 40 53 50 Z" fill="#18181b" stroke="#231710" stroke-width="0.8"/>
+
+        <!-- Ear -->
+        <path d="M 54 62 C 47 62 47 72 54 72 Z" fill="#ffd9b3" stroke="#231710" stroke-width="2"/>
+        <path d="M 50 66 C 51 65 53 66 52 68" fill="none" stroke="#231710" stroke-width="1.2"/>
+
+        <!-- Bushy Iconic Eyebrows -->
+        <path d="M 64 45 C 70 38 82 40 85 46 C 81 48 72 48 64 45 Z" fill="#18181b" stroke="#18181b" stroke-width="1.2" stroke-linejoin="round"/>
+        <path d="M 94 44 C 104 36 116 39 120 45 C 115 48 104 48 94 44 Z" fill="#18181b" stroke="#18181b" stroke-width="1.2" stroke-linejoin="round"/>
+
+        <!-- Left Eye: Large Shiny Pupil -->
+        <ellipse cx="76" cy="56" rx="5.5" ry="7" fill="#18181b"/>
+        <ellipse cx="78" cy="54" rx="2" ry="2.5" fill="#ffffff"/>
+        <ellipse cx="75" cy="59" rx="1" ry="1" fill="#ffffff"/>
+
+        <!-- Right Eye: Mischievous Wink -->
+        <path d="M 98 56 Q 106 50 114 57" fill="none" stroke="#18181b" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- Rosy Cheeks -->
+        <ellipse cx="118" cy="71" rx="6.5" ry="4" fill="#fb7185" opacity="0.65"/>
+        <ellipse cx="64" cy="70" rx="5" ry="3.5" fill="#fb7185" opacity="0.55"/>
+
+        <!-- Cheerful Grin -->
+        <path d="M 85 71 Q 93 81 101 73" fill="#f43f5e" stroke="#231710" stroke-width="2" stroke-linecap="round"/>
+
+        <!-- Red T-Shirt -->
+        <path d="M 62 86 L 52 114 L 118 114 L 108 86 Z" fill="#ef4444" stroke="#231710" stroke-width="2"/>
+        <path d="M 76 87 Q 85 93 94 87" fill="none" stroke="#facc15" stroke-width="2.5"/>
+
+        <!-- Gold Star Badge on Chest -->
+        <polygon points="85,95 86.5,99 91,99.5 87.5,102.5 88.5,107 85,104.5 81.5,107 82.5,102.5 79,99.5 83.5,99" fill="#facc15" stroke="#b45309" stroke-width="0.5"/>
+
+        <!-- Saluting Right Arm -->
+        <path d="M 106 91 Q 120 83 124 70" fill="none" stroke="#ef4444" stroke-width="7" stroke-linecap="round"/>
+        <circle cx="123" cy="67" r="4.5" fill="#ffd9b3" stroke="#231710" stroke-width="1.5"/>
+
+        <!-- Left Arm Holding Chocobi Box -->
+        <g transform="translate(42, 94)">
+          <polygon points="3,0 13,0 16,6 16,18 13,24 3,24 0,18 0,6" fill="#10b981" stroke="#065f46" stroke-width="1"/>
+          <circle cx="8" cy="12" r="3.5" fill="#f472b6"/>
+          <circle cx="7" cy="11" r="0.8" fill="#ffffff"/>
+          <path d="M 20 0 Q 15 10 10 12" fill="none" stroke="#ef4444" stroke-width="5" stroke-linecap="round"/>
+        </g>
+
+        <!-- Yellow Shorts -->
+        <rect x="56" y="114" width="58" height="16" rx="2" fill="#facc15" stroke="#231710" stroke-width="2"/>
+      </g>
+    </g>
+
+    <!-- Security Verified Pill on Photo -->
+    <rect x="60" y="231" width="46" height="13" rx="3" fill="rgba(16, 185, 129, 0.2)" stroke="#10b981" stroke-width="0.8"/>
+    <text x="83" y="240.5" text-anchor="middle" font-size="6.5" font-weight="700" fill="#34d399" class="dash_mono">SEC-OK ✓</text>
+
+    <!-- Animated Light Traveling Around Photo Frame Border -->
+    <rect class="dash_photo_border_run" x="54" y="132" width="112" height="118" rx="8" fill="none" stroke="url(#dash_aurora_gradient)" stroke-width="2"/>
+
+    <!-- MICROCHIP & CLEARANCE SECTION (x=176..288) -->
+    <!-- Gold Microchip Vector -->
+    <g transform="translate(176, 133)">
+      <rect width="46" height="36" rx="4" fill="url(#dash_gold_chip)" stroke="#d97706" stroke-width="1"/>
+      <!-- Inner Contact Pads -->
+      <rect x="4" y="4" width="16" height="12" rx="1.5" fill="#fde68a" stroke="#b45309" stroke-width="0.5"/>
+      <rect x="26" y="4" width="16" height="12" rx="1.5" fill="#fde68a" stroke="#b45309" stroke-width="0.5"/>
+      <rect x="4" y="20" width="16" height="12" rx="1.5" fill="#fde68a" stroke="#b45309" stroke-width="0.5"/>
+      <rect x="26" y="20" width="16" height="12" rx="1.5" fill="#fde68a" stroke="#b45309" stroke-width="0.5"/>
+      <line x1="23" y1="2" x2="23" y2="34" stroke="#b45309" stroke-width="0.8"/>
+      <line x1="2" y1="18" x2="44" y2="18" stroke="#b45309" stroke-width="0.8"/>
+      <!-- Circuit Traces Extending Out -->
+      <path d="M 46 10 L 55 10 L 59 14" fill="none" stroke="#fbbf24" stroke-width="1"/>
+      <circle cx="59" cy="14" r="1.5" fill="#f59e0b"/>
+      <path d="M 46 26 L 55 26 L 59 22" fill="none" stroke="#fbbf24" stroke-width="1"/>
+      <circle cx="59" cy="22" r="1.5" fill="#f59e0b"/>
+      <path d="M 23 36 L 23 44 L 28 48" fill="none" stroke="#fbbf24" stroke-width="1"/>
+      <circle cx="28" cy="48" r="1.5" fill="#f59e0b"/>
+    </g>
+
+    <!-- Action Kamen Seal beside Microchip -->
+    <g transform="translate(254, 151)">
+      <circle r="15" fill="#181a30" stroke="#a78bfa" stroke-width="0.9"/>
+      <circle r="12" fill="none" stroke="#f472b6" stroke-dasharray="3 2" stroke-width="0.7"/>
+      <polygon points="0,-8 2,-2 8,-2 3,1 5,7 0,3 -5,7 -3,1 -8,-2 -2,-2" fill="#facc15" stroke="#ca8a04" stroke-width="0.4"/>
+      <text x="0" y="10.5" text-anchor="middle" font-size="5" font-weight="800" fill="#22d3ee" class="dash_mono">AK-SEAL</text>
+    </g>
+
+    <!-- Clearance Card Container below chip -->
+    <g transform="translate(176, 179)">
+      <rect width="112" height="72" rx="6" fill="#13162a" stroke="rgba(255, 255, 255, 0.08)" stroke-width="0.8"/>
+      <text x="8" y="13" font-size="6.5" font-weight="700" fill="#94a3b8" letter-spacing="0.8">CLEARANCE STATUS</text>
+      <!-- Level 5 Clearance Pill -->
+      <rect x="8" y="18" width="96" height="17" rx="3.5" fill="rgba(250, 204, 21, 0.12)" stroke="#facc15" stroke-width="0.8"/>
+      <text x="56" y="29.5" text-anchor="middle" font-size="7.2" font-weight="800" fill="#facc15" class="dash_mono">LEVEL 5 // OVERLORD</text>
+      <text x="8" y="47" font-size="6.2" font-weight="600" fill="#a78bfa" class="dash_mono">SYS: CHOCOBI-CORE</text>
+      <text x="8" y="57" font-size="5.8" font-weight="600" fill="#64748b" class="dash_mono">NODE: HYPR-ARCH-01</text>
+      <text x="8" y="66" font-size="5.8" font-weight="600" fill="#22c55e" class="dash_mono">AUTH: PASSED 100%</text>
+    </g>
+
+    <!-- IDENTITY DETAILS SECTION (y=260..356) -->
+    <line x1="54" y1="258" x2="288" y2="258" stroke="rgba(255, 255, 255, 0.1)" stroke-width="0.8"/>
+
+    <!-- Agent Name -->
+    <text x="54" y="272" font-size="6.8" font-weight="700" fill="#64748b" letter-spacing="1">AGENT / OPERATIVE NAME</text>
+    <text x="54" y="290" font-size="14.5" font-weight="800" fill="#ffffff" letter-spacing="0.3">Blue Dragon (Vaibhav)</text>
+
+    <!-- Role -->
+    <text x="54" y="306" font-size="6.8" font-weight="700" fill="#64748b" letter-spacing="1">OPERATIONAL ROLE</text>
+    <text x="54" y="321" font-size="10.5" font-weight="700" fill="#22d3ee" letter-spacing="0.2">Lead Systems Hacker &amp; Dev</text>
+
+    <!-- ID Number & Status -->
+    <g transform="translate(54, 329)">
+      <text x="0" y="10" font-size="6.8" font-weight="700" fill="#64748b" letter-spacing="1">ID NUMBER</text>
+      <text x="0" y="24" font-size="11" font-weight="800" fill="#a78bfa" class="dash_mono">KDF-2026-320</text>
+
+      <text x="130" y="10" font-size="6.8" font-weight="700" fill="#64748b" letter-spacing="1">STATUS</text>
+      <rect x="130" y="14" width="70" height="14" rx="3" fill="rgba(34, 197, 94, 0.15)" stroke="#22c55e" stroke-width="0.8"/>
+      <text x="165" y="24" text-anchor="middle" font-size="7.5" font-weight="800" fill="#4ade80" class="dash_mono">ACTIVE ●</text>
+    </g>
+
+    <!-- BARCODE & SECURITY FOOTER (y=366..450) -->
+    <g transform="translate(54, 366)">
+      <rect width="234" height="82" rx="7" fill="#090a12" stroke="rgba(255, 255, 255, 0.08)" stroke-width="0.8"/>
+
+      <!-- Barcode Vector Lines (||||| | |||| ||| |||||||) -->
+      <g fill="#e2e8f0" transform="translate(14, 10)">
+        <rect x="0" y="0" width="2" height="34"/>
+        <rect x="4" y="0" width="3.5" height="34"/>
+        <rect x="10" y="0" width="1.2" height="34"/>
+        <rect x="13" y="0" width="4" height="34"/>
+        <rect x="19" y="0" width="1.5" height="34"/>
+        <rect x="25" y="0" width="1" height="34"/>
+        <rect x="30" y="0" width="3.5" height="34"/>
+        <rect x="36" y="0" width="1.5" height="34"/>
+        <rect x="40" y="0" width="4.5" height="34"/>
+        <rect x="47" y="0" width="2" height="34"/>
+        <rect x="54" y="0" width="1.2" height="34"/>
+        <rect x="58" y="0" width="3" height="34"/>
+        <rect x="63" y="0" width="1.5" height="34"/>
+        <rect x="69" y="0" width="4" height="34"/>
+        <rect x="75" y="0" width="2" height="34"/>
+        <rect x="79" y="0" width="1" height="34"/>
+        <rect x="82" y="0" width="3.5" height="34"/>
+        <rect x="90" y="0" width="1.5" height="34"/>
+        <rect x="94" y="0" width="4.5" height="34"/>
+        <rect x="101" y="0" width="2" height="34"/>
+        <rect x="105" y="0" width="1.2" height="34"/>
+        <rect x="108" y="0" width="3" height="34"/>
+        <rect x="115" y="0" width="4" height="34"/>
+        <rect x="121" y="0" width="1.5" height="34"/>
+        <rect x="125" y="0" width="3" height="34"/>
+        <rect x="130" y="0" width="1.2" height="34"/>
+        <rect x="133" y="0" width="4.5" height="34"/>
+        <rect x="140" y="0" width="2" height="34"/>
+        <rect x="146" y="0" width="1" height="34"/>
+        <rect x="149" y="0" width="3.5" height="34"/>
+        <rect x="155" y="0" width="1.5" height="34"/>
+        <rect x="159" y="0" width="4" height="34"/>
+        <rect x="165" y="0" width="2" height="34"/>
+        <rect x="169" y="0" width="1.2" height="34"/>
+        <rect x="172" y="0" width="3.5" height="34"/>
+        <rect x="178" y="0" width="1" height="34"/>
+        <rect x="181" y="0" width="4" height="34"/>
+        <rect x="187" y="0" width="1.5" height="34"/>
+        <rect x="191" y="0" width="3" height="34"/>
+        <rect x="196" y="0" width="2" height="34"/>
+        <rect x="200" y="0" width="4" height="34"/>
+        <rect x="205" y="0" width="1.2" height="34"/>
+      </g>
+
+      <!-- Security Number -->
+      <text x="117" y="57" text-anchor="middle" font-size="9" font-weight="700" fill="#94a3b8" letter-spacing="4" class="dash_mono">8 1 2 5 2 7 2 3 7</text>
+      <text x="117" y="72" text-anchor="middle" font-size="6.5" font-weight="600" fill="#475569" letter-spacing="0.5">AUTHENTIC KDF SMART CREDENTIAL // ARCH LINUX</text>
+    </g>
+
+    <!-- Translucent Holographic Foil Sheen (Clipped to Badge) -->
+    <g clip-path="url(#dash_badge_clip)">
+      <rect class="dash_holo_sweep" x="0" y="0" width="140" height="500" fill="url(#dash_holo_grad)" pointer-events="none"/>
+    </g>
+  </g>
+
+  <!-- ======================================================== -->
+  <!-- RIGHT SIDE: LIVE ENGINEERING DASHBOARD (x=330..870)       -->
+  <!-- ======================================================== -->
+  <g transform="translate(330, 0)">
+    <!-- Top Header & Live Telemetry Indicator -->
+    <g transform="translate(0, 42)">
+      <text x="0" y="3" font-size="14.5" font-weight="800" fill="#f8fafc" letter-spacing="1.5">TELEMETRY // DEV METRICS</text>
+
+      <!-- Pulsing Live Indicator -->
+      <g transform="translate(290, 0)">
+        <circle class="dash_pulse_ring" cx="0" cy="0" r="3.5" fill="none" stroke="#22c55e" stroke-width="1.5"/>
+        <circle cx="0" cy="0" r="3.8" fill="#22c55e"/>
+        <text x="12" y="3.5" font-size="9.5" font-weight="700" fill="#4ade80" letter-spacing="0.8" class="dash_mono">● LIVE SYS STATUS</text>
+      </g>
+
+      <!-- Sub Metadata / Uptime -->
+      <text x="535" y="3" text-anchor="end" font-size="8.8" font-weight="600" fill="#64748b" class="dash_mono">ARCH-ZEN // UPTIME: 99.98%</text>
+    </g>
+
+    <!-- 4 KPI TILES (x=0..535, y=62..134, height=72) -->
+    <g transform="translate(0, 62)">
+      <!-- Tile 1: Public Repos -->
+      <g transform="translate(0, 0)">
+        <rect width="124" height="72" rx="8" fill="#111322" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <rect x="0" y="0" width="124" height="3" rx="1.5" fill="#22d3ee"/>
+        <text x="12" y="21" font-size="7.8" font-weight="700" fill="#94a3b8" letter-spacing="0.5">PUBLIC REPOS</text>
+        <text x="12" y="47" font-size="20" font-weight="800" fill="#38bdf8" class="dash_mono">20+</text>
+        <text x="12" y="62" font-size="7.5" font-weight="600" fill="#64748b">Open Source Built</text>
+      </g>
+
+      <!-- Tile 2: Operating System -->
+      <g transform="translate(137, 0)">
+        <rect width="124" height="72" rx="8" fill="#111322" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <rect x="0" y="0" width="124" height="3" rx="1.5" fill="#a78bfa"/>
+        <text x="12" y="21" font-size="7.8" font-weight="700" fill="#94a3b8" letter-spacing="0.5">OPERATING SYS</text>
+        <text x="12" y="46" font-size="15" font-weight="800" fill="#c084fc">Arch Linux</text>
+        <text x="12" y="62" font-size="7.5" font-weight="600" fill="#64748b">Hyprland Rice</text>
+      </g>
+
+      <!-- Tile 3: Core Passion -->
+      <g transform="translate(274, 0)">
+        <rect width="124" height="72" rx="8" fill="#111322" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <rect x="0" y="0" width="124" height="3" rx="1.5" fill="#f472b6"/>
+        <text x="12" y="21" font-size="7.8" font-weight="700" fill="#94a3b8" letter-spacing="0.5">CORE PASSION</text>
+        <text x="12" y="46" font-size="14.5" font-weight="800" fill="#f472b6">Music &amp; Audio</text>
+        <text x="12" y="62" font-size="7.5" font-weight="600" fill="#64748b">Sangita Platform</text>
+      </g>
+
+      <!-- Tile 4: Chocobi Stash -->
+      <g transform="translate(411, 0)">
+        <rect width="124" height="72" rx="8" fill="#111322" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+        <rect x="0" y="0" width="124" height="3" rx="1.5" fill="#facc15"/>
+        <text x="12" y="21" font-size="7.8" font-weight="700" fill="#94a3b8" letter-spacing="0.5">CHOCOBI STASH</text>
+        <text x="12" y="47" font-size="20" font-weight="800" fill="#facc15" class="dash_mono">100%</text>
+        <text x="12" y="62" font-size="7.5" font-weight="600" fill="#64748b">Full Energy ★</text>
+      </g>
+    </g>
+
+    <!-- BAR CHART OF FEATURED REPOSITORIES (y=146..344, height=198) -->
+    <g transform="translate(0, 146)">
+      <rect width="535" height="198" rx="10" fill="#111322" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1"/>
+
+      <!-- Panel Header -->
+      <g transform="translate(16, 20)">
+        <polygon points="6,0 12,3.5 12,10.5 6,14 0,10.5 0,3.5" fill="rgba(34, 211, 238, 0.15)" stroke="#22d3ee" stroke-width="0.8"/>
+        <circle cx="6" cy="7" r="2" fill="#22d3ee"/>
+        <text x="20" y="10.5" font-size="9.5" font-weight="800" fill="#f1f5f9" letter-spacing="1">FEATURED ARCHITECTURES &amp; REPOSITORIES</text>
+        <text x="503" y="10" text-anchor="end" font-size="7.8" font-weight="700" fill="#38bdf8" class="dash_mono">5 ACTIVE CORES</text>
+      </g>
+
+      <!-- 5 Repository Progress Bars -->
+      <!-- Row 1: sangita (92%) -> 463px -->
+      <g transform="translate(16, 44)">
+        <text x="0" y="0" font-size="10.5" font-weight="700" fill="#f8fafc">sangita</text>
+        <text x="52" y="0" font-size="8.5" font-weight="500" fill="#94a3b8">— Self-Hosted Music &amp; Synced Lyrics</text>
+        <text x="503" y="0" text-anchor="end" font-size="10" font-weight="700" fill="#38bdf8" class="dash_mono">92%</text>
+        <rect x="0" y="6" width="503" height="6.5" rx="3.2" fill="#1e2238"/>
+        <rect class="dash_bar" x="0" y="6" width="463" height="6.5" rx="3.2" fill="url(#dash_bar_grad1)"/>
+      </g>
+
+      <!-- Row 2: Guardra (78%) -> 392px -->
+      <g transform="translate(16, 74)">
+        <text x="0" y="0" font-size="10.5" font-weight="700" fill="#f8fafc">Guardra</text>
+        <text x="56" y="0" font-size="8.5" font-weight="500" fill="#94a3b8">— Privacy Browser Suite &amp; Identity Shield</text>
+        <text x="503" y="0" text-anchor="end" font-size="10" font-weight="700" fill="#c084fc" class="dash_mono">78%</text>
+        <rect x="0" y="6" width="503" height="6.5" rx="3.2" fill="#1e2238"/>
+        <rect class="dash_bar" x="0" y="6" width="392" height="6.5" rx="3.2" fill="url(#dash_bar_grad2)"/>
+      </g>
+
+      <!-- Row 3: Product-Catalogue-Search (70%) -> 352px -->
+      <g transform="translate(16, 104)">
+        <text x="0" y="0" font-size="10.5" font-weight="700" fill="#f8fafc">Product-Catalogue-Search</text>
+        <text x="160" y="0" font-size="8.5" font-weight="500" fill="#94a3b8">— Ranked Search Engine</text>
+        <text x="503" y="0" text-anchor="end" font-size="10" font-weight="700" fill="#22d3ee" class="dash_mono">70%</text>
+        <rect x="0" y="6" width="503" height="6.5" rx="3.2" fill="#1e2238"/>
+        <rect class="dash_bar" x="0" y="6" width="352" height="6.5" rx="3.2" fill="url(#dash_bar_grad3)"/>
+      </g>
+
+      <!-- Row 4: Additional-Monitor-Widget (65%) -> 327px -->
+      <g transform="translate(16, 134)">
+        <text x="0" y="0" font-size="10.5" font-weight="700" fill="#f8fafc">Additional-Monitor-Widget</text>
+        <text x="160" y="0" font-size="8.5" font-weight="500" fill="#94a3b8">— Hyprland / Waybar Widget</text>
+        <text x="503" y="0" text-anchor="end" font-size="10" font-weight="700" fill="#f472b6" class="dash_mono">65%</text>
+        <rect x="0" y="6" width="503" height="6.5" rx="3.2" fill="#1e2238"/>
+        <rect class="dash_bar" x="0" y="6" width="327" height="6.5" rx="3.2" fill="url(#dash_bar_grad4)"/>
+      </g>
+
+      <!-- Row 5: multi-account-monitor (58%) -> 292px -->
+      <g transform="translate(16, 164)">
+        <text x="0" y="0" font-size="10.5" font-weight="700" fill="#f8fafc">multi-account-monitor</text>
+        <text x="144" y="0" font-size="8.5" font-weight="500" fill="#94a3b8">— Rate Limit Tracker</text>
+        <text x="503" y="0" text-anchor="end" font-size="10" font-weight="700" fill="#facc15" class="dash_mono">58%</text>
+        <rect x="0" y="6" width="503" height="6.5" rx="3.2" fill="#1e2238"/>
+        <rect class="dash_bar" x="0" y="6" width="292" height="6.5" rx="3.2" fill="url(#dash_bar_grad5)"/>
+      </g>
+    </g>
+
+    <!-- "NOW PLAYING / ACTIVITY" TERMINAL PANEL (y=354..462, height=108) -->
+    <g transform="translate(0, 354)">
+      <rect width="535" height="108" rx="10" fill="#090a12" stroke="#1e2238" stroke-width="1.2"/>
+
+      <!-- Console Header Bar -->
+      <g transform="translate(16, 12)">
+        <circle cx="0" cy="0" r="3.5" fill="#ef4444"/>
+        <circle cx="11" cy="0" r="3.5" fill="#f59e0b"/>
+        <circle cx="22" cy="0" r="3.5" fill="#10b981"/>
+
+        <text x="36" y="3.5" font-size="8.5" font-weight="700" fill="#94a3b8" letter-spacing="1" class="dash_mono">SYSTEM ACTIVITY LOG // LIVE TTY1</text>
+
+        <!-- Mini Animated Audio Equalizer Bars -->
+        <g transform="translate(480, -6)">
+          <rect class="dash_eq_bar1" x="0" y="14" width="2.5" height="4" rx="1" fill="#38bdf8"/>
+          <rect class="dash_eq_bar2" x="6" y="5" width="2.5" height="13" rx="1" fill="#a78bfa"/>
+          <rect class="dash_eq_bar3" x="12" y="12" width="2.5" height="6" rx="1" fill="#f472b6"/>
+          <rect class="dash_eq_bar4" x="18" y="6" width="2.5" height="12" rx="1" fill="#facc15"/>
+          <rect class="dash_eq_bar5" x="24" y="13" width="2.5" height="5" rx="1" fill="#4ade80"/>
+        </g>
+      </g>
+
+      <!-- Header line divider -->
+      <line x1="0" y1="24" x2="535" y2="24" stroke="rgba(255, 255, 255, 0.06)" stroke-width="1"/>
+
+      <!-- Terminal Lines -->
+      <g transform="translate(16, 44)" class="dash_mono">
+        <!-- Line 1: Sangita Audio -->
+        <text x="0" y="0" font-size="8.8" font-weight="500">
+          <tspan fill="#64748b">&gt; </tspan>
+          <tspan fill="#38bdf8" font-weight="700">[SANGITA-AUDIO]</tspan>
+          <tspan fill="#cbd5e1"> Streaming FLAC + Syncing Whisper AI lyrics... </tspan>
+          <tspan fill="#4ade80" font-weight="700">[OK]</tspan>
+        </text>
+
+        <!-- Line 2: Hyprland OS -->
+        <text x="0" y="21" font-size="8.8" font-weight="500">
+          <tspan fill="#64748b">&gt; </tspan>
+          <tspan fill="#c084fc" font-weight="700">[HYPRLAND-OS]</tspan>
+          <tspan fill="#cbd5e1"> 144Hz Wayland compositor running smooth</tspan>
+        </text>
+
+        <!-- Line 3: Mission & Cursor -->
+        <text x="0" y="42" font-size="8.8" font-weight="500">
+          <tspan fill="#64748b">&gt; </tspan>
+          <tspan fill="#facc15" font-weight="700">[MISSION]</tspan>
+          <tspan fill="#cbd5e1"> Watching Action Kamen &amp; coding modern web apps</tspan>
+          <tspan class="dash_cursor" fill="#38bdf8" font-weight="700"> █</tspan>
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
